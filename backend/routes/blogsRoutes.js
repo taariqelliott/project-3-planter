@@ -7,4 +7,5 @@ router.post('/', blogsCtrl.createBlogs)
 router.put('/:id', blogsCtrl.updateBlog)
 router.delete('/:id', blogsCtrl.deleteBlog)
 
+
 module.exports = router
