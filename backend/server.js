@@ -12,9 +12,9 @@ app.use(cors()); // makes sure that we don't get cors errors when our react app 
 app.use(express.urlencoded({extended: true})) //req.body
 app.use(express.json())
 
-app.get("/", (req, res) => {
-    res.send("Listening..");
-  });
+// app.get("/", (req, res) => {
+//     res.send("Listening..");
+//   });
 
  
 // import all available routes in our /routes/index.js 
