@@ -1,6 +1,8 @@
 const db = require('../models')
 console.log(db)
 
+
+//getblogs
 const getBlogs = (req, res) => {
 	db.Blogs.find({})
 	.then((foundBlogs) => {
@@ -12,6 +14,8 @@ const getBlogs = (req, res) => {
 	})
 }
 
+
+//create blogs
 const createBlogs = (req, res) => {
 	db.Blogs.create(req.body)
 	.then((createdBlog) => {
@@ -23,6 +27,7 @@ const createBlogs = (req, res) => {
 	})
 }
 
+//Update blogs
 const updateBlog = (req, res) => {
 	db.Blogs.findByIdAndUpdate(req.params.id, req.body, {new: true})
 	.then((updatedBlog) => {
@@ -34,6 +39,8 @@ const updateBlog = (req, res) => {
 	})
 }
 
+
+//delete blogs
 const deleteBlog = (req, res) => {
 	db.Blogs.findByIdAndDelete(req.params.id)
 	.then((deletedBlog) => {

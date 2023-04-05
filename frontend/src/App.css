@@ -1,0 +1,16 @@
+
+body {
+  font-size: 10px;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.plantContainer {
+  border: 2px solid red;
+  margin: 2%;
+  padding: 15px;
+}

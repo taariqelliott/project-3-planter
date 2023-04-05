@@ -1,3 +1,4 @@
 module.exports = {
-    blogsCtrl: require('./blogsCtrls')
+    blogsCtrl: require('./blogsCtrls'),
+    plantsCtrls: require('./plantsCtrls')
 }
