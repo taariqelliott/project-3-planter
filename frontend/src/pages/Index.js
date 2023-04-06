@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // import Blogs from "./Blogs";
 
@@ -17,7 +18,7 @@ function Index(props) {
     // set the about state to the data
     setplant(data.data);
   };
-
+  
   // make an initial call for the data inside a useEffect, so it only happens once on component load
   useEffect(() => {
     getplant()}, []);
@@ -32,7 +33,9 @@ function Index(props) {
         {
           plants.map((plant) => (
             <div key={plant.id} className="plantContainer">
+              <Link to={`/show/${plant.id}`} >
               <h1>{plant.common_name}</h1>
+              </Link>
             </div>
           ))
 
