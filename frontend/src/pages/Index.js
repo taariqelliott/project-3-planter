@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Blogs from "./Blogs";
+// import Blogs from "./Blogs";
 
 function Index(props) {
   // create state to hold about data
@@ -10,12 +10,12 @@ function Index(props) {
   // create function to make api call
   const getplant = async () => {
     // make api call and get response
-    const response = await fetch(props.URL + "plants");
+    const response = await fetch(props.URL);
     // turn response into javascript object
     const data = await response.json();
     console.log(data)
     // set the about state to the data
-    setplant(data.data.data);
+    setplant(data.data);
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
@@ -31,15 +31,12 @@ function Index(props) {
 
         {
           plants.map((plant) => (
-            <div className="plantContainer">
+            <div key={plant.id} className="plantContainer">
               <h1>{plant.common_name}</h1>
             </div>
           ))
 
         }
-
-        <Blogs URL={props.URL} />
-
 
       </div>
      )
