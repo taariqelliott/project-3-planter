@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="flex-box">
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/index" element={<Index URL={URL} />} />
@@ -23,6 +24,7 @@ function App() {
           element={<Show URL={URL} detailsURL={detailsURL} />}
         />
         <Route exact path="/blogs" element={<BlogsShow />} />
+
       </Routes>
     </div>
   );
