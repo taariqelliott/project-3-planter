@@ -31,13 +31,12 @@ function Show(props) {
               <em>{plant.scientific_name}</em>
             </h2>
             <p>Type: {plant.type}</p>
-            <p>Dimension: {plant.dimension}</p>
-            <p>Watering: {plant.watering}</p>
+            <p>{plant.dimension}</p>
             <p>
               Hardiness: {plant.hardiness.min}-{plant.hardiness.max}
             </p>
+            <p>Watering: {plant.watering}</p>
             <p>Sunlight: {plant.sunlight.join(", ")}</p>
-            <p>Attracts: {plant.attracts.join(", ")}</p>
             <p>Propagation: {plant.propagation.join(", ")}</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// import Blogs from "./Blogs";
+import Blogs from "./Blogs";
 
 function Index(props) {
   // create state to hold about data
@@ -35,6 +35,7 @@ function Index(props) {
                 <h1>{plant.common_name}</h1>
                 <img src={plant.default_image.thumbnail} alt="" />
               </Link>
+              <Blogs URL={props.URL} />
             </div>
           ))}
       </div>
