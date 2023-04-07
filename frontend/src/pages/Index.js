@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Blogs from "./Blogs";
+// import Blogs from "./Blogs";
 
 function Index(props) {
   // create state to hold about data
@@ -26,24 +26,12 @@ function Index(props) {
   // define a function that will return the JSX needed once we get the data
 
   const loaded = () => {
-     return (
-      <div>
-
-        {
-          plants.map((plant) => (
-            <div className="plantContainer">
+     return plants.map((plant) => (
+            <div key={plant.id}className="plantContainer">
               <h1>{plant.common_name}</h1>
+              <p></p>
             </div>
           ))
-
-        }
-
-        <Blogs URL={props.URL} />
-
-
-      </div>
-     )
-
   };
 
  
