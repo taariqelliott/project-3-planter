@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/> 
         <Route exact path="/index" element={<Index URL={URL}/>}/> 
         <Route exact path="/show/:id" element={<Show/>}/> 
-        <Route exact path="/blogs" element={<BlogsShow />}/> 
+        <Route exact path="/blogs/:id" element={<BlogsShow />}/> 
         
       </Routes>
       
