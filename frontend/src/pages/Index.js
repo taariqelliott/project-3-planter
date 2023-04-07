@@ -35,11 +35,12 @@ function Index(props) {
                 <h1>{plant.common_name}</h1>
                 <img src={plant.default_image.thumbnail} alt="" />
               </Link>
-              <Blogs URL={props.URL} />
             </div>
           ))}
+         <Blogs URL={props.URL} />
       </div>
     );
+    
   };
 
   // if data arrives return the result of loaded, if not, an h1 that says loading

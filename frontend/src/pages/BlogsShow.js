@@ -1,39 +1,29 @@
-import React from "react"
 import { useState, useEffect } from "react";
-import {useParams, useNavigate} from "react-router-dom"
+import { useParams } from "react-router-dom";
 
+function BlogsShow(props) {
+  const { id } = useParams();
+  const [blog, setBlog] = useState(null);
 
-const BlogsShow = (props) => {
-    const params = useParams()
-    const id = params.id
-    // const blog = blogs.find((b) => b.id === id);
-    const navigate = useNavigate()
-    
-    const [blogs, setBlog] = useState(null)
-    // return (
-    //     <div>
-    //         <h1>{blog.title}</h1>
-    //         <p>{blog.description}</p>
-    //     </div>
-    // )
+  const getBlogs = async () => {
 
-      // define a function that will return the JSX needed once we get the data
+    const details = `${props.URL}${id}`;
 
-    
-    const loaded = () => (
-        <div>
-        <h1>{blog.title}</h1>
-        <p>{blog.description}</p>
+    const response = await fetch(details);
+    const data = await response.json();
+    console.log(data); // Add this line to see the response data
+    setBlog(data);
+  };
+
+  useEffect(() => {
+    getBlogs();
+  }, []);
+
+  return (
+    <div>
+
     </div>
-
-
-    )
-
-
- // if data arrives return the result of loaded, if not, an h1 that says loading
- return(blogs ? loaded(): <h1>Loading...</h1>) 
-    
-    
+  );
 }
 
-export default BlogsShow
+export default BlogsShow;

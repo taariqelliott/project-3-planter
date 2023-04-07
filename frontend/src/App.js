@@ -23,7 +23,7 @@ function App() {
           path="/show/:id"
           element={<Show URL={URL} detailsURL={detailsURL} />}
         />
-        <Route exact path="/blogs" element={<BlogsShow />} />
+        <Route exact path="/blogs/:id" element={<BlogsShow />} />
 
       </Routes>
     </div>

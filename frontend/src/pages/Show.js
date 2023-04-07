@@ -3,21 +3,21 @@ import { useParams } from "react-router-dom";
 
 function Show(props) {
   const { id } = useParams();
-  const [plant, setPlant] = useState(null);
+  const [plant, setDetails] = useState(null);
   const apiKey = "sk-3t2R642df04b75c19417";
 
-  const getPlant = async () => {
+  const getDetails = async () => {
     // https://perenual.com/api/species/details/1?key=sk-3t2R642df04b75c19417
     const details = `${props.detailsURL}${id}?key=${apiKey}`;
 
     const response = await fetch(details);
     const data = await response.json();
     console.log(data); // Add this line to see the response data
-    setPlant(data);
+    setDetails(data);
   };
 
   useEffect(() => {
-    getPlant();
+    getDetails();
   }, [id]);
 
   return (
