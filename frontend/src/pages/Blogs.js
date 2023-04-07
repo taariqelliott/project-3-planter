@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 function Blogs(props) {
   // create state to hold about data
@@ -15,6 +17,7 @@ function Blogs(props) {
     // turn response into javascript object
     const data = await response.json();
     console.log(data)
+
     // set the about state to the data
     setblog(data);
   };
@@ -29,8 +32,11 @@ function Blogs(props) {
 
   const loaded = () => {
     return blogs.map((blog) => (
-      <div className="plantContainer">
+      <div key={blog.id} className="blogContainer">
+        <Link to={`/blogs/${blog.id}`}>
         <h1>{blog.title}</h1>
+        </Link>
+        
     </div>
     ));
   };
