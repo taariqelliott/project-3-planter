@@ -1,29 +1,34 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function BlogsShow(props) {
-  const { id } = useParams();
-  const [blog, setBlog] = useState(null);
+const BlogShow = (props) => {
+  const params = useParams();
+  const navigate = useNavigate()
+  const id = params.id;
+  const blogs = props.blogs;
+  const blog = blogs.find((b) => b._id === id);
 
-  const getBlogs = async () => {
-
-    const details = `${props.URL}${id}`;
-
-    const response = await fetch(details);
-    const data = await response.json();
-    console.log(data); // Add this line to see the response data
-    setBlog(data);
+  const removeBlog = (e) => {
+    e.preventDefault()
+    props.deleteBlog(blog._id);
+    navigate("/plants");
   };
 
-  useEffect(() => {
-    getBlogs();
-  }, []);
 
   return (
-    <div>
-
+    <div className="show-box">
+      <h1>{blog.title}</h1>
+      <img src={blog.image} alt={blog.title} />
+      <p>Created By: {blog.createdBy}</p>
+      <p>{blog.description}</p>
+       <Link to={`/edit/${blog._id}`} key={blog._id}>
+        <button>Edit Blog</button>
+      </Link>
+      <button id="delete" onClick={removeBlog}>
+        DELETE
+      </button>
     </div>
   );
-}
+};
 
-export default BlogsShow;
+export default BlogShow;

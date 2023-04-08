@@ -1,6 +1,6 @@
 
 body {
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .flex-box {
@@ -10,7 +10,61 @@ body {
 
 
 .plantContainer {
-  border: 2px solid red;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  background-color: rgb(38, 37, 36);
   margin: 2%;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.plantContainer a {
+  color: #fff;
+}
+
+/* //nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(76, 151, 69);
+  color: white;
   padding: 15px;
+  font-size: 2em;
+  font-size: 18px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+
+.form-div {
+  padding: 20px;
+  text-align: center;
+}
+
+input[type="text" i] {
+  margin: 5px 2px;
+}
+
+input[type="submit" i] {
+  margin: 10px;
+}
+
+.blog-box {
+  border: 2px solid rgb(76, 151, 69);
+  padding: 20px;
+}
+
+.show-box {
+  padding: 20px;
+  text-align: center;
 }
