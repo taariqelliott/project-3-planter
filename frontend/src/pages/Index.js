@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 
 import Blogs from "./Blogs";
+import SearchBar from "../components/SearchBar";
 
 function Index(props) {
 
@@ -13,6 +14,7 @@ function Index(props) {
 
     return (
       <div className="flex-box">
+        <SearchBar plants={props.plants}/>
         {props.plants &&
           props.plants.map((plant) => (
             <div key={plant.id} className="plantContainer">
