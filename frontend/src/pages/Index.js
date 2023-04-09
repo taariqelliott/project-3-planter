@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Blogs from "./Blogs";
 import SearchBar from "../components/SearchBar";
 
-
 function Index({blogs}) {
   
   const [page, setPage] = useState(1);
@@ -31,10 +30,10 @@ function Index({blogs}) {
   const loaded = () => {
     return (
       <div className="flex-box">
-        <SearchBar />
+        <SearchBar plants={plants}/>
           <div className="pagination">
             <button onClick={() => setPage(page - 1)} disabled={page === 1}> Prev </button>
-          <button onClick={() => setPage(page + 1)} > Next </button>
+            <button onClick={() => setPage(page + 1)} > Next </button>
           </div>
             {plants.map((plant) => (
               <div key={plant.id} className="plantContainer">
