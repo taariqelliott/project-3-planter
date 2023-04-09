@@ -11,6 +11,7 @@ import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 
 const Main = (props) => {
+  const { API_KEY } = process.env
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
@@ -27,7 +28,6 @@ const Main = (props) => {
     const data = await response.json();
     // set the about state to the data
     setplant(data.data.data);
-    console.log(data.data.data);
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
@@ -104,7 +104,7 @@ const createBlog = async (blogForm) => {
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/plants" element={<Index plants={plants} blogs={blogs}/>} />
+        <Route exact path="/plants" element={<Index plants={plants} blogs={blogs} API_KEY={API_KEY}/>} />
         <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs}/>} />
