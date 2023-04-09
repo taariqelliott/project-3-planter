@@ -11,7 +11,6 @@ import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 
 const Main = (props) => {
-  const { API_KEY } = process.env
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
@@ -99,12 +98,13 @@ const createBlog = async (blogForm) => {
     getblogs();
   }, []);
   
+  
 
   return (
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/plants" element={<Index plants={plants} blogs={blogs} API_KEY={API_KEY}/>} />
+        <Route exact path="/plants" element={<Index plants={plants} blogs={blogs}/>} />
         <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs}/>} />

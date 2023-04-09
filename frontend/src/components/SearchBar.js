@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-const { API_KEY } = process.env
-
 
 const SearchBar = (props) => {
     const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-3t2R642df04b75c19417&q=`
@@ -16,9 +14,9 @@ const SearchBar = (props) => {
                     // console.log(API_PLANTS.get(`${query.slug}`))
                     try {
                         const res = await fetch(`${API_PLANTS}${query.slug}`)
-                        const data = await res.json();
+                        const outputData = await res.json();
                       setQuery({ ...query, results: res.query });
-                      console.log(query.slug);
+                      console.log(outputData.data);
                     } catch (err) {
                         console.error(err)
                     }
@@ -36,9 +34,9 @@ const SearchBar = (props) => {
         type="search"
         placeholder="Search"
         value={query.slug}
-        onChange={(e) => setQuery({ ...query, slug: e.target.value })}
-      />
+        onChange={(e) => setQuery({ ...query, slug: e.target.value })}/>
       <br />
+      
 
     </div>
     
