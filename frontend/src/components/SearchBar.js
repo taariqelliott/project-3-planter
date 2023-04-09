@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 const SearchBar = (props) => {
     const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-3t2R642df04b75c19417&q=`
     const [query, setQuery] = useState({
-    slug: "",
-    results: [],
+    slug: "", //the search term
+    results: [], // Api's response
     })
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const SearchBar = (props) => {
                         const res = await fetch(`${API_PLANTS}${query.slug}`)
                         const outputData = await res.json();
                       setQuery({ ...query, results: res.query });
-                      console.log(outputData.data);
+                      console.log("outputdata.data",outputData.data);
                     } catch (err) {
                         console.error(err)
                     }
