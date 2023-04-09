@@ -27,7 +27,6 @@ const Main = (props) => {
     const data = await response.json();
     // set the about state to the data
     setplant(data.data.data);
-    console.log(data.data.data);
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
@@ -98,6 +97,7 @@ const createBlog = async (blogForm) => {
   useEffect(() => {
     getblogs();
   }, []);
+  
   
 
   return (

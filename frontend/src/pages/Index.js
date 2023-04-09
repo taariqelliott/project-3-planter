@@ -1,7 +1,9 @@
-
 import { Link } from "react-router-dom";
 
 import Blogs from "./Blogs";
+import SearchBar from "../components/SearchBar";
+
+
 
 function Index(props) {
 
@@ -10,11 +12,10 @@ function Index(props) {
 
   const loaded = () => {
 
-
     return (
       <div className="flex-box">
-        {props.plants &&
-          props.plants.map((plant) => (
+        <SearchBar/>
+        {props.plants.map((plant) => (
             <div key={plant.id} className="plantContainer">
               <Link to={`/show/${plant.id}`} key={plant.id}>
                 <img src={plant.default_image.thumbnail} alt="" />
