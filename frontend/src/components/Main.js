@@ -9,6 +9,7 @@ import BlogsShow from "../pages/BlogsShow";
 import Blogs from "../pages/Blogs";
 import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
+import Collections from "../pages/Collections";
 
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
@@ -91,6 +92,7 @@ const createBlog = async (blogForm) => {
         <Route exact path="/blogs/:id" element={<BlogsShow blogs={blogs} deleteBlog={deleteBlog}/>} />
         <Route exact path="/new" element={<NewPage blogs={blogs} createBlog={createBlog} />} />
         <Route exact path="/edit/:id" element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />} />
+        <Route exact path="/mycollection" element={<Collections />} />
       </Routes>
     </main>
   );

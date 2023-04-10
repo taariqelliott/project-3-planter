@@ -69,3 +69,9 @@ input[type="submit" i] {
   text-align: center;
 }
 
+.search-bar{
+background-color: rgba(246, 246, 246, 0.8)  
+}
+.pagination{
+  justify-content: center;
+}

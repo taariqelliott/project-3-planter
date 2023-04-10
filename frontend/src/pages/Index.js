@@ -7,23 +7,25 @@ import SearchBar from "../components/SearchBar";
 function Index({blogs}) {
   
   const [page, setPage] = useState(1);
-  const [plants, setplant] = useState(null);
+  const [plants, setplants] = useState(null);
   
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-WOd7643350463b93a473`
 
     // Function to get list of Plants
-    const getplant = async () => {
+    const getplants = async () => {
       // make api call and get response
       const response = await fetch(ALL_PLANTS_API);
       // turn response into javascript object
       const data = await response.json();
       // set the about state to the data
-      setplant(data.data);
+      console.log("here is data:",data)
+      setplants(data.data);
     };
   
     // make an initial call for the data inside a useEffect, so it only happens once on component load
     useEffect(() => {
-      getplant();
+      getplants();
+      // eslint-disable-next-line
     }, [page]);
 
   // define a function that will return the JSX needed once we get the data
