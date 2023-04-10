@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import Blogs from "./Blogs";
 import SearchBar from "../components/SearchBar";
+import PlantList from "../components/PlantList";
 
 function Index({ blogs }) {
   const [page, setPage] = useState(1);
@@ -42,18 +43,7 @@ function Index({ blogs }) {
           </div>
         </div>
         <div className="flex-box">
-          {plants.map((plant) => (
-            <div key={plant.id} className="plantContainer">
-              <Link to={`/show/${plant.id}`} key={plant.id}>
-                <img
-                  className="plant-image"
-                  src={plant.default_image.thumbnail}
-                  alt=""
-                />
-                <h3>{plant.common_name}</h3>
-              </Link>
-            </div>
-          ))}
+          <PlantList plants={plants} />
           <Blogs blogs={blogs} />
         </div>
       </>
