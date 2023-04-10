@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 function Show(props) {
   const { id } = useParams();
@@ -13,7 +15,7 @@ function Show(props) {
 
     const response = await fetch(details);
     const data = await response.json();
-    console.log(data); // Add this line to see the response data
+    console.log("show page data", data); // Add this line to see the response data
     setDetails(data);
   };
 
@@ -40,6 +42,9 @@ function Show(props) {
             <p>Sunlight: {plant.sunlight.join(", ")}</p>
             <p>Propagation: {plant.propagation.join(", ")}</p>
           </div>
+            <Link to={"/mycollections"} key={plant.id}>
+            <button>Add to my collection</button>
+          </Link>
         </div>
       ) : (
         <h1>Loading...</h1>

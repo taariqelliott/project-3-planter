@@ -17,7 +17,7 @@ const SearchBar = (props) => {
                         const res = await fetch(`${API_PLANTS}${query.slug}`)
                         const outputData = await res.json();
                       setQuery({ ...query, results: outputData.data });
-                      console.log("outputdata.data", outputData);
+                      console.log("search bar outputData", outputData);
                     } catch (err) {
                         console.error(err)
                     }
@@ -35,7 +35,7 @@ const SearchBar = (props) => {
                 placeholder="Search"
                 value={query.slug}
                 onChange={(e) => setQuery({ ...query, slug: e.target.value })}/>
-                  <ul>
+                  <ul className="search-bar-dropdown">
                       {query.results.map((plant) => (
                         <Link to={`/show/${plant.id}`} key={plant.id}>
                         <li key={plant.id}>{plant.common_name}</li>
