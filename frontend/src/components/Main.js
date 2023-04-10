@@ -9,30 +9,13 @@ import BlogsShow from "../pages/BlogsShow";
 import Blogs from "../pages/Blogs";
 import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
+import Collections from "../pages/Collections";
 
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
-  // create state to hold about data
-  const [plants, setplant] = useState(null);
   const [blogs, setblog] = useState(null);
-
-
-  // Function to get list of Plants
-  const getplant = async () => {
-    // make api call and get response
-    const response = await fetch(URL + "plants/");
-    // turn response into javascript object
-    const data = await response.json();
-    // set the about state to the data
-    setplant(data.data.data);
-  };
-
-  // make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => {
-    getplant();
-  }, []);
 
 // Function to get Blogs
 
@@ -46,7 +29,6 @@ const getblogs = async () => {
   // set the about state to the data
   setblog(data.data);
 };
-
 
 
 //Function to create Blogs
@@ -104,13 +86,13 @@ const createBlog = async (blogForm) => {
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/plants" element={<Index plants={plants} blogs={blogs}/>} />
-        <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}
-        />
+        <Route exact path="/plants" element={<Index blogs={blogs}/>} />
+        <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}/>
         <Route exact path="/blogs" element={<Blogs blogs={blogs}/>} />
         <Route exact path="/blogs/:id" element={<BlogsShow blogs={blogs} deleteBlog={deleteBlog}/>} />
         <Route exact path="/new" element={<NewPage blogs={blogs} createBlog={createBlog} />} />
         <Route exact path="/edit/:id" element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />} />
+        <Route exact path="/mycollection" element={<Collections />} />
       </Routes>
     </main>
   );
