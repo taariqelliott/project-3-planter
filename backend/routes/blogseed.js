@@ -8,10 +8,10 @@ router.get("/", (req, res) => {
 });
 
 //get seed data of blogs
-router.get("/seedblogs", (req, res) => {
-  // send projects via JSON
-  res.json(blogSeed);
-});
+// router.get("/seedblogs", (req, res) => {
+//   // send projects via JSON
+//   res.json(blogSeed);
+// });
 
 
 module.exports = router

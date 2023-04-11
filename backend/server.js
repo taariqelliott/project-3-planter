@@ -9,7 +9,7 @@ const { PORT } = process.env
 const cors = require("cors");
 
 // Middlware
-app.use(cors()); // makes sure that we don't get cors errors when our react app makes a request to our express app
+app.use(cors('*')); // makes sure that we don't get cors errors when our react app makes a request to our express app
 app.use(express.urlencoded({extended: true})) //req.body
 app.use(express.json())
 

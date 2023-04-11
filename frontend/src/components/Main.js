@@ -70,8 +70,10 @@ const createBlog = async (blogForm) => {
 
   const updateBlogs = async (blog, id) => {
     console.log(blog)
+    console.log("line 73", URL2 + id)
     // make post request to create blog
     await fetch((URL2 + id), {
+    
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -82,6 +84,8 @@ const createBlog = async (blogForm) => {
     // update list of blog
     getblogs();
   };
+
+ 
 
 
   //Delete Blog

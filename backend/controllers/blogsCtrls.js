@@ -34,7 +34,7 @@ const updateBlog = (req, res) => {
 	if(!updatedBlog) {
 			res.status(400).json({message: "Cannot update Blog"})
 		} else {
-			res.status(200).json({data: updatedPerson, message: 'updated Blog'})
+			res.status(200).json({data: updatedBlog, message: 'updated Blog'})
 		}
 	})
 }
@@ -47,7 +47,7 @@ const deleteBlog = (req, res) => {
 		if(!deletedBlog) {
 			res.status(400).json({message: "Could not delete Blog"})
 		} else {
-			res.status(200).json({data:deletedBlog, message: 'deleted Blog'})
+			res.status(200).json({data: deletedBlog, message: 'deleted Blog'})
 		}
 	})
 }
