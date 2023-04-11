@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 function Show(props) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
-  const apiKey = "sk-3t2R642df04b75c19417";
+  // const apiKey = "sk-3t2R642df04b75c19417";
   const apiKey2 = "sk-WOd7643350463b93a473";
 
   const getDetails = async () => {
-    // https://perenual.com/api/species/details/1?key=sk-3t2R642df04b75c19417
     const details = `${props.detailsURL}${id}?key=${apiKey2}`;
 
     const response = await fetch(details);

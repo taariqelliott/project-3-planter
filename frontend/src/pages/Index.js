@@ -4,40 +4,18 @@ import { useEffect, useState } from "react";
 import Blogs from "./Blogs";
 import SearchBar from "../components/SearchBar";
 
-function Index({blogs}) {
+const Index = (props) => {
   
-  const [page, setPage] = useState(1);
-  const [plants, setplants] = useState(null);
-  
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-WOd7643350463b93a473`
-
-    // Function to get list of Plants
-    const getplants = async () => {
-      // make api call and get response
-      const response = await fetch(ALL_PLANTS_API);
-      // turn response into javascript object
-      const data = await response.json();
-      // set the about state to the data
-      console.log("here is data:",data)
-      setplants(data.data);
-    };
-  
-    // make an initial call for the data inside a useEffect, so it only happens once on component load
-    useEffect(() => {
-      getplants();
-      // eslint-disable-next-line
-    }, [page]);
-
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
     return (
       <div className="flex-box">
-        <SearchBar plants={plants}/>
+        <SearchBar plants={props.plants}/>
           <div className="pagination">
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}> Prev </button>
-            <button onClick={() => setPage(page + 1)} > Next </button>
+            <button onClick={props.pageReducer} disabled={props.page === 1}> Prev </button>
+            <button onClick={props.pageIncreament} > Next </button>
           </div>
-            {plants.map((plant) => (
+            {props.plants.map((plant) => (
               <div key={plant.id} className="plantContainer">
                 <Link to={`/show/${plant.id}`} key={plant.id}>
                   <img src={plant.default_image.thumbnail} alt="" />
@@ -45,13 +23,13 @@ function Index({blogs}) {
                 </Link>
               </div>
               ))}
-          <Blogs blogs={blogs} />
+          <Blogs blogs={props.blogs} />
       </div>
     );
   };
 
   // if data arrives return the result of loaded, if not, an h1 that says loading
-  return plants ? loaded() : <h1>Loading...</h1>;
+  return props.plants ? loaded() : <h1>Loading...</h1>;
 }
 
 export default Index;

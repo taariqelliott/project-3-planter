@@ -15,7 +15,30 @@ const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
+
   const [blogs, setblog] = useState(null);
+
+  const [page, setPage] = useState(1);
+  const [plants, setplants] = useState(null);
+  
+  // const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-WOd7643350463b93a473`
+
+    // Function to get list of Plants
+    const getAllPlants = async () => {
+      // make api call and get response
+      const response = await fetch(URL + 'plants');
+      // turn response into javascript object
+      const data = await response.json();
+      // set the about state to the data
+      console.log("here is data:",data)
+      setplants(data.data.data);
+    };
+  
+    // make an initial call for the data inside a useEffect, so it only happens once on component load
+    useEffect(() => {
+      getAllPlants();
+      // eslint-disable-next-line
+    }, [page]);
 
 // Function to get Blogs
 
@@ -83,13 +106,21 @@ const createBlog = async (blogForm) => {
     getblogs();
   }, []);
   
-  
+  //page Functions
+  const pageReducer = () => {
+    setPage(page - 1)
+  }
+
+  const pageIncreament = () => {
+    setPage(page + 1)
+  }
+
 
   return (
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/plants" element={<Index blogs={blogs}/>} />
+        <Route exact path="/plants" element={<Index blogs={blogs} plants={plants} page={page} pageReducer={pageReducer} pageIncreament={pageIncreament}/>} />
         <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}/>
         <Route exact path="/blogs" element={<Blogs blogs={blogs}/>} />
         <Route exact path="/blogs/:id" element={<BlogsShow blogs={blogs} deleteBlog={deleteBlog}/>} />
