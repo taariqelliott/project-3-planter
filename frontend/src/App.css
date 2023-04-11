@@ -10,17 +10,17 @@ body {
 
 
 .plantContainer {
-  border: 2px solid #000000;
-  border-radius: 20px;
-  background-color: rgb(38, 37, 36);
+  /* border: 2px solid #000000;
+  border-radius: 20px; */
+  /* background-color: rgb(38, 37, 36); */
   margin: 2%;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-  color: #fff;
+  color: #000000;
 }
 
 .plantContainer a {
-  color: #fff;
+  color: #000000;
 }
 
 /* //nav */
@@ -69,12 +69,44 @@ input[type="submit" i] {
   text-align: center;
 }
 
-.search-bar{
-background-color: rgba(246, 246, 246, 0.8)  
+.search-bar {
+  background-color: rgba(246, 246, 246, 0.8);
 }
+
 .pagination{
   justify-content: center;
 }
 .search-bar-dropdown{
   list-style: none;
 }
+
+
+.plant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.plant-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: rgb(38, 37, 36);
+}
+
+button {
+  background-color: rgb(76, 151, 69);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+

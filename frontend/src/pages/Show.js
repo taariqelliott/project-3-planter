@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import PlantDetails from "../components/PlantDetails";
 
 function Show(props) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
   const apiKey = "sk-3t2R642df04b75c19417";
-  const apiKey2 = "sk-WOd7643350463b93a473";
+  const apiKey2 = "sk-X9wb64348fe4ec427434";
 
   const getDetails = async () => {
     // https://perenual.com/api/species/details/1?key=sk-3t2R642df04b75c19417
@@ -24,28 +24,16 @@ function Show(props) {
   }, [id]);
 
   return (
-    <div>
+    <div className="plant-details">
       {plant ? (
-        <div>
+        <>
+          <PlantDetails plant={plant} />
           <div>
-            <img src={plant.default_image.small_url} alt={plant.common_name} />
-            <h1>{plant.common_name}</h1>
-            <h2>
-              <em>{plant.scientific_name}</em>
-            </h2>
-            <p>Type: {plant.type}</p>
-            <p>{plant.dimension}</p>
-            <p>
-              Hardiness: {plant.hardiness.min}-{plant.hardiness.max}
-            </p>
-            <p>Watering: {plant.watering}</p>
-            <p>Sunlight: {plant.sunlight.join(", ")}</p>
-            <p>Propagation: {plant.propagation.join(", ")}</p>
-          </div>
             <Link to={"/mycollections"} key={plant.id}>
-            <button>Add to my collection</button>
-          </Link>
-        </div>
+              <button>Add to my collection</button>
+            </Link>
+          </div>
+        </>
       ) : (
         <h1>Loading...</h1>
       )}
