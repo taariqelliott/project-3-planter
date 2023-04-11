@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import Blogs from "./Blogs";
 import SearchBar from "../components/SearchBar";
+import PlantList from "../components/PlantList";
+
 
 const Index = (props) => {
   
@@ -12,7 +14,8 @@ const Index = (props) => {
       <div className="flex-box">
         <SearchBar plants={props.plants}/>
           <div className="pagination">
-            <button onClick={props.pageReducer} disabled={props.page === 1}> Prev </button>
+            <button onClick={props.pageReducer} disabled={props.page === 1}> {" "}
+              Prev{" "} </button>
             <button onClick={props.pageIncreament} > Next </button>
           </div>
             {props.plants.map((plant) => (
@@ -23,8 +26,10 @@ const Index = (props) => {
                 </Link>
               </div>
               ))}
+            <PlantList plants={plants} />
           <Blogs blogs={props.blogs} />
       </div>
+
     );
   };
 
