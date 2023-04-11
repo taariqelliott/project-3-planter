@@ -11,7 +11,7 @@ function Show(props) {
 
   const getDetails = async () => {
     // https://perenual.com/api/species/details/1?key=sk-3t2R642df04b75c19417
-    const details = `${props.detailsURL}${id}?key=${apiKey2}`;
+    const details = `${props.detailsURL}${id}?key=${apiKey}`;
 
     const response = await fetch(details);
     const data = await response.json();
@@ -42,7 +42,7 @@ function Show(props) {
             <p>Sunlight: {plant.sunlight.join(", ")}</p>
             <p>Propagation: {plant.propagation.join(", ")}</p>
           </div>
-            <Link to={"/mycollections"} key={plant.id}>
+            <Link to={"/mycollection"} key={plant.id}>
             <button>Add to my collection</button>
           </Link>
         </div>

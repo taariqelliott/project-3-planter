@@ -9,7 +9,7 @@ function Index({blogs}) {
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
   
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-WOd7643350463b93a473`
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`
 
     // Function to get list of Plants
     const getplants = async () => {
