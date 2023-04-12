@@ -1,35 +1,45 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import Blogs from "./Blogs";
-import SearchBar from "../components/SearchBar";
 import PlantList from "../components/PlantList";
-
+import SearchResult from "../components/SearchResult";
 
 const Index = (props) => {
-  
+
+ 
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
     return (
-      <div className="flex-box">
-        <SearchBar plants={props.plants}/>
-          <div className="pagination">
-            <button onClick={props.pageReducer} disabled={props.page === 1}> {" "}
-              Prev{" "} </button>
-            <button onClick={props.pageIncreament} > Next </button>
+      <div className="">
+        <div className="header-box">
+          <div className="search-bar">
+            <form onSubmit={props.handleSubmit}>
+              <input
+                type="search"
+                placeholder="Search"
+                onChange={props.querySet}
+                value={props.query.slug}
+              />
+              <input type="submit" value="Submit" className="submit-btn" />
+            </form>
           </div>
-            {props.plants.map((plant) => (
-              <div key={plant.id} className="plantContainer">
-                <Link to={`/show/${plant.id}`} key={plant.id}>
-                  <img src={plant.default_image.thumbnail} alt="" />
-                  <h1>{plant.common_name}</h1>
-                </Link>
-              </div>
-              ))}
-            <PlantList plants={plants} />
+          <div className="pagination">
+            <button
+              className="serach-btn"
+              onClick={props.pageReducer}
+              disabled={props.page === 1}>
+              &lt; Prev
+            </button>
+            <button className="serach-btn" onClick={props.pageIncreament}>
+              Next &gt;
+            </button>
+          </div>
+        </div>
+        <div className="flex-box">
+          <SearchResult query={props.query}/>
+          <PlantList plants={props.plants} />
           <Blogs blogs={props.blogs} />
+        </div>
       </div>
-
     );
   };
 
