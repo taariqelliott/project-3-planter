@@ -1,16 +1,140 @@
-
+/* general styling */
 body {
-  font-size: 10px;
+  font-size: 15px;
 }
 
-.flex-box {
-  display: flex;
-  flex-wrap: wrap;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* displays plants list next to blog box */
+.index-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-gap: 10px;
+}
+
+/* displays the plant images in a grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.blog-box {
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin: 76px 15px 10px 0px;
+  text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+  .blog-box {
+    display: none;
+  }
+}
 
 .plantContainer {
-  border: 2px solid red;
-  margin: 2%;
-  padding: 15px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
 }
+
+.plant-image {
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  min-width: 70px;
+  max-width: 130px;
+}
+
+.plant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* //nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(76, 151, 69);
+  color: white;
+  padding: 15px;
+  font-size: 2em;
+  font-size: 18px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+
+.form-div {
+  padding: 20px;
+  text-align: center;
+}
+
+input[type="text" i] {
+  margin: 5px 2px;
+}
+
+input[type="submit" i] {
+  margin: 10px;
+}
+
+.show-box {
+  padding: 20px;
+  text-align: center;
+}
+
+.search-bar {
+  background-color: rgba(246, 246, 246, 0.8);
+}
+
+.pagination{
+text-align: right;
+margin-bottom: 20px;
+}
+
+/* .pagination .prev-btn {
+  margin-right: 7%
+}
+
+.pagination .next-btn {
+  margin-left: 7%
+} */
+
+
+.search-bar-dropdown{
+  list-style: none;
+}
+
+
+
+
+button {
+  background-color: rgb(76, 151, 69);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+
+
