@@ -19,16 +19,23 @@ a {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin-left: 15px;
 }
 
 .blog-box {
   border: 2px solid rgb(76, 151, 69);
   padding: 15px;
-  margin: 65px 20px 10px 5px;
+  margin: 76px 15px 10px 0px;
   text-align: left;
 }
 
+@media screen and (max-width: 800px) {
+  .blog-box {
+    display: none;
+  }
+}
 
 .plantContainer {
   text-align: center;
@@ -37,12 +44,11 @@ a {
 }
 
 .plant-image {
-  min-width: 50px;
-  max-width: 150px;
   height: auto;
   border: 2px solid #000000;
   border-radius: 5px;
-  background-color: rgb(38, 37, 36);
+  min-width: 70px;
+  max-width: 130px;
 }
 
 .plant-details {
@@ -99,10 +105,19 @@ input[type="submit" i] {
 }
 
 .pagination{
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-direction: column;
+text-align: right;
+margin-bottom: 20px;
 }
+
+/* .pagination .prev-btn {
+  margin-right: 7%
+}
+
+.pagination .next-btn {
+  margin-left: 7%
+} */
+
+
 .search-bar-dropdown{
   list-style: none;
 }
@@ -118,12 +133,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .plantContainer {
-    width: calc(50% - 10px);
-  }
 }
 
 

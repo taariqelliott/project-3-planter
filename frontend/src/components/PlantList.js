@@ -20,11 +20,18 @@ const PlantList = (props) => {
   return (
     <div>
       <div className="pagination">
-        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+        <button
+          class="prev-btn"
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+        >
           {" "}
           Prev{" "}
         </button>
-        <button onClick={() => setPage(page + 1)}> Next </button>
+        <button class="next-btn" onClick={() => setPage(page + 1)}>
+          {" "}
+          Next{" "}
+        </button>
       </div>
 
       <div className="grid-container">
