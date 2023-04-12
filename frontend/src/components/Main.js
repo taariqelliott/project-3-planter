@@ -11,11 +11,35 @@ import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
 
+
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
+
   const [blogs, setblog] = useState(null);
+
+  const [page, setPage] = useState(1);
+  const [plants, setplants] = useState(null);
+  
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-WOd7643350463b93a473`
+
+    // Function to get list of Plants
+    const getAllPlants = async () => {
+      // make api call and get response
+      const response = await fetch(ALL_PLANTS_API);
+      // turn response into javascript object
+      const data = await response.json();
+      // set the about state to the data
+      console.log("here is data:",data)
+      setplants(data.data);
+    };
+  
+    // make an initial call for the data inside a useEffect, so it only happens once on component load
+    useEffect(() => {
+      getAllPlants();
+      // eslint-disable-next-line
+    }, [page]);
 
 // Function to get Blogs
 
@@ -51,8 +75,10 @@ const createBlog = async (blogForm) => {
 
   const updateBlogs = async (blog, id) => {
     console.log(blog)
+    console.log("line 73", URL2 + id)
     // make post request to create blog
     await fetch((URL2 + id), {
+    
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,6 +89,7 @@ const createBlog = async (blogForm) => {
     // update list of blog
     getblogs();
   };
+
 
 
   //Delete Blog
@@ -80,13 +107,65 @@ const createBlog = async (blogForm) => {
     getblogs();
   }, []);
   
+  //page Functions
+  const pageReducer = () => {
+    setPage(page - 1)
+  }
+
+  const pageIncreament = () => {
+    setPage(page + 1)
+  }
+
+
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-pdyK642b684e0b8c3421&q=`;
+  const [query, setQuery] = useState({
+    slug: "", //the search term
+    results: [], // Api's response
+  });
+
+  const getSearchResult = async () => {
+
+    if (query.slug !== "") {
+      const timeoutId = setTimeout(() => {
+        const fetchData = async () => {
+          try {
+            const res = await fetch(`${API_PLANTS}${query.slug}`);
+            const outputData = await res.json();
+            setQuery({ ...query, results: outputData.data });
+            console.log("search bar outputData", outputData);
+          } catch (err) {
+            console.error(err);
+          }
+        };
+        fetchData();
+      }, 1000);
+      return () => clearTimeout(timeoutId);
+    }
+
+  }
   
+  // useEffect(() => {
+  //   getSearchResult()
+    
+  // }, [query.slug]);
+
+  const handleSubmit = (event) => {
+    //prevent page from refreshing on form submission
+    event.preventDefault();
+    getSearchResult(query.slug);
+  };
+
+  const querySet = (e) => {
+    setQuery({ ...query, slug: e.target.value })
+  };
+
+
 
   return (
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/plants" element={<Index blogs={blogs}/>} />
+        <Route exact path="/plants" element={<Index blogs={blogs} plants={plants} page={page} pageReducer={pageReducer} handleSubmit={handleSubmit} query={query} querySet={querySet} pageIncreament={pageIncreament}/>} />
         <Route exact path="/show/:id" element={<Show URL={URL} detailsURL={detailsURL} />}/>
         <Route exact path="/blogs" element={<Blogs blogs={blogs}/>} />
         <Route exact path="/blogs/:id" element={<BlogsShow blogs={blogs} deleteBlog={deleteBlog}/>} />
