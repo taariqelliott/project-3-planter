@@ -8,7 +8,10 @@ function Index({ blogs }) {
       <div className="search-bar-container">
         <SearchBar />
       </div>
-      <div>
+      <div
+        style={{ display: "flex", flexDirection: "row" }}
+        className="index-container"
+      >
         <PlantList />
         <Blogs blogs={blogs} />
       </div>

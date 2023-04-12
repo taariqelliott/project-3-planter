@@ -37,7 +37,13 @@ const PlantList = (props) => {
                   src={plant.default_image.thumbnail}
                   alt={plant.common_name}
                 />
-                <h3>{plant.common_name}</h3>
+                <p>
+                  <strong>{plant.common_name}</strong>
+                </p>
+
+                <p>
+                  <em>{plant.scientific_name}</em>
+                </p>
               </Link>
             </div>
           ))
