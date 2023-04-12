@@ -3,10 +3,13 @@ body {
   font-size: 15px;
 }
 
-.flex-box {
-  display: flex;
-  flex-wrap: wrap;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 250px;
 }
+
+
 
 
 .plantContainer {
@@ -14,9 +17,10 @@ body {
   border-radius: 20px; */
   /* background-color: rgb(38, 37, 36); */
   margin: 2%;
-  padding: 5px;
+  padding: 15px;
   text-align: center;
   color: #000000;
+  margin-bottom: 15px;
 }
 
 .plantContainer a {
@@ -75,6 +79,8 @@ input[type="submit" i] {
 
 .pagination{
   justify-content: center;
+  margin-bottom: 10px;
+  flex-direction: column;
 }
 .search-bar-dropdown{
   list-style: none;
@@ -86,15 +92,14 @@ input[type="submit" i] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 }
 
 .plant-image {
-  max-width: 100%;
+  min-width: 40px;
+  max-width: 250px;
   height: auto;
-  margin-bottom: 20px;
   border: 2px solid #000000;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: rgb(38, 37, 36);
 }
 
@@ -107,6 +112,8 @@ button {
   cursor: pointer;
   margin-top: 20px;
 }
+
+
 
 
 
