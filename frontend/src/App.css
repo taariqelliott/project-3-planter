@@ -1,27 +1,103 @@
-
+/* general styling */
 body {
   font-size: 15px;
 }
 
-.flex-box {
-  display: flex;
-  flex-wrap: wrap;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* displays plants list next to blog box */
+.index-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-gap: 10px;
+}
+
+/* displays the plant images in a grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.blog-box {
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin: 40px 15px 10px 0px;
+  text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+  .blog-box {
+    display: none;
+  }
+}
 
 .plantContainer {
-  /* border: 2px solid #000000;
-  border-radius: 20px; */
-  /* background-color: rgb(38, 37, 36); */
-  margin: 2%;
-  padding: 5px;
   text-align: center;
   color: #000000;
+  margin-bottom: 20px;
 }
 
-.plantContainer a {
-  color: #000000;
+
+.plant-image {
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  min-width: 70px;
+  max-width: 130px;
 }
+
+/* search results */
+.results-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  border: 2px solid rgb(76, 151, 69);
+  max-height: 300px; /* set the maximum height */
+  overflow-y: scroll; /* enable vertical scrolling */
+  margin: 0px 6px 20px 15px;
+}
+
+
+
+
+.resultContainer {
+  padding: 10px 0px 10px 20px;
+  border-bottom: 2px solid rgb(76, 151, 69);
+}
+
+.resultContainer em {
+    display: inline;
+    
+}
+
+.resultContainer p {
+  color:rgb(32, 64, 29);
+}
+
+
+.result-image {
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  min-width: 70px;
+  max-width: 90px;
+  margin-right: 15px;
+  float: left;
+}
+
+/* show page */
+.plant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* //nav */
 
@@ -59,11 +135,6 @@ input[type="submit" i] {
   margin: 10px;
 }
 
-.blog-box {
-  border: 2px solid rgb(76, 151, 69);
-  padding: 20px;
-}
-
 .show-box {
   padding: 20px;
   text-align: center;
@@ -82,52 +153,26 @@ input[type="submit" i] {
 }
 
 .pagination{
-  padding: 5px 20px;
+text-align: right;
+margin-bottom: 20px;
 }
 
-.serach-btn{
-  padding: 5px 5px;
-  border: 2px solid rgb(76, 151, 69);
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  margin: 10px 5px 10px 5px;
+/* .pagination .prev-btn {
+  margin-right: 7%
 }
 
-.submit-btn {
-  background-color: rgb(76, 151, 69);
-  border: 2px solid hsl(127, 64%, 8%);
-  color: #fff;
-  border-radius: 0.25em;
-  cursor: pointer;
-  outline: none;
-  padding: 5px 10px;
-}
+.pagination .next-btn {
+  margin-left: 7%
+} */
 
-input[type="search" i] {
-  appearance: auto;
-  box-sizing: border-box;
-  border-radius: 0.25em;
-  padding: 5px 20px;
+
+.search-bar-dropdown{
+  list-style: none;
 }
 
 
-.plant-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
 
-.plant-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  background-color: rgb(38, 37, 36);
-}
+
 
 
 
