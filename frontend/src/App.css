@@ -27,7 +27,7 @@ a {
 .blog-box {
   border: 2px solid rgb(76, 151, 69);
   padding: 15px;
-  margin: 76px 15px 10px 0px;
+  margin: 40px 15px 10px 0px;
   text-align: left;
 }
 
@@ -43,6 +43,7 @@ a {
   margin-bottom: 20px;
 }
 
+
 .plant-image {
   height: auto;
   border: 2px solid #000000;
@@ -51,6 +52,45 @@ a {
   max-width: 130px;
 }
 
+/* search results */
+.results-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  border: 2px solid rgb(76, 151, 69);
+  max-height: 300px; /* set the maximum height */
+  overflow-y: scroll; /* enable vertical scrolling */
+  margin: 0px 6px 20px 15px;
+}
+
+
+
+
+.resultContainer {
+  padding: 10px 0px 10px 20px;
+  border-bottom: 2px solid rgb(76, 151, 69);
+}
+
+.resultContainer em {
+    display: inline;
+    
+}
+
+.resultContainer p {
+  color:rgb(32, 64, 29);
+}
+
+
+.result-image {
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  min-width: 70px;
+  max-width: 90px;
+  margin-right: 15px;
+  float: left;
+}
+
+/* show page */
 .plant-details {
   display: flex;
   flex-direction: column;
@@ -100,8 +140,16 @@ input[type="submit" i] {
   text-align: center;
 }
 
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
 .search-bar {
-  background-color: rgba(246, 246, 246, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px;
 }
 
 .pagination{
@@ -125,15 +173,6 @@ margin-bottom: 20px;
 
 
 
-button {
-  background-color: rgb(76, 151, 69);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
 
 
 
