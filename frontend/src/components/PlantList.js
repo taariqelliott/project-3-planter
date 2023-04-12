@@ -18,7 +18,7 @@ const PlantList = (props) => {
   }, [page]);
 
   return (
-    <div className="plant-list-container">
+    <div>
       <div className="pagination">
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           {" "}

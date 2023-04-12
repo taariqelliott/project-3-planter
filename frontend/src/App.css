@@ -1,45 +1,57 @@
-
+/* general styling */
 body {
   font-size: 15px;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-}
-
-.index-container {
-  display: grid;
-  grid-template-columns: fr 1fr;
-  grid-auto-rows: 250px;
-}
-
-.blog-box {
-  border: 2px solid rgb(76, 151, 69);
-  padding: 20px;
-  margin: 10px;
-}
-
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* displays plants list next to blog box */
+.index-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-gap: 10px;
+}
+
+/* displays the plant images in a grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.blog-box {
+  border: 2px solid rgb(76, 151, 69);
+  padding: 15px;
+  margin: 65px 20px 10px 5px;
+  text-align: left;
+}
+
 
 .plantContainer {
-  padding: 15px;
   text-align: center;
   color: #000000;
+  margin-bottom: 20px;
 }
 
-
-
-
-.plantContainer a {
-  color: #000000;
+.plant-image {
+  min-width: 50px;
+  max-width: 150px;
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: rgb(38, 37, 36);
 }
+
+.plant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* //nav */
 
@@ -96,22 +108,7 @@ input[type="submit" i] {
 }
 
 
-.plant-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-}
-
-.plant-image {
-  min-width: 20px;
-  max-width: 250px;
-  height: auto;
-  border: 2px solid #000000;
-  border-radius: 5px;
-  background-color: rgb(38, 37, 36);
-}
 
 button {
   background-color: rgb(76, 151, 69);
@@ -123,6 +120,11 @@ button {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .plantContainer {
+    width: calc(50% - 10px);
+  }
+}
 
 
 
