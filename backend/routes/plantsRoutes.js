@@ -3,6 +3,7 @@ const { plantsCtrls } = require('../controllers') //all of our methods inside of
 
 // ROUTES - METHODS // 
 router.get('/', plantsCtrls.getPlants)
+router.get('/', plantsCtrls.getDetails)
 
 
 module.exports = router
