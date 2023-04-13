@@ -6,8 +6,9 @@ const SearchResult = (props) => {
       style={{
         // hide the borders of the result box when there is no text input
         border: props.query.slug === "" ? "none" : "2px solid rgb(76, 151, 69)",
-      }}
-    >
+        boxShadow: props.query.slug === "" ? "none" : "0 2px 8px rgba(0, 0, 0, 0.25)",
+        padding: props.query.slug === "" ? "0" : "1rem",
+      }}>
       {props.query.slug !== "" &&
         props.query.results.map((plant) => (
           <div key={plant.id} className="resultContainer">

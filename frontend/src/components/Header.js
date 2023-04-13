@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
+    <header className="item">
     <nav className="nav">
       <Link to="/plants">
         <div>Home</div>
@@ -15,6 +16,7 @@ const Header = (props) => {
         <div>Create Blog</div>
       </Link>
     </nav>
+    </header>
   );
 };
 
