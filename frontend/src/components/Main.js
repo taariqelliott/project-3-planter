@@ -10,6 +10,7 @@ import Blogs from "../pages/Blogs";
 import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
+import Help from "../pages/Help";
 
 
 const Main = (props) => {
@@ -172,6 +173,8 @@ const createBlog = async (blogForm) => {
         <Route exact path="/new" element={<NewPage blogs={blogs} createBlog={createBlog} />} />
         <Route exact path="/edit/:id" element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />} />
         <Route exact path="/mycollection" element={<Collections />} />
+        <Route exact path="/help" element={<Help />} />
+        
       </Routes>
     </main>
   );

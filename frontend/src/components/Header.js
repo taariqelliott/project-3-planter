@@ -15,6 +15,9 @@ const Header = (props) => {
           <Link to="/new">
               <div>Create Blog</div>
           </Link>
+          <Link to="/help">
+              <div>Plant Diagnostic</div>
+          </Link>
 
           
       </nav>
