@@ -5,7 +5,7 @@ function PlantDetails({ plant }) {
     <div>
       <img
         className="plant-image"
-        src={plant.default_image.small_url}
+        src={plant.default_image.medium_url}
         alt={plant.common_name}
       />
       <h1>{plant.common_name}</h1>

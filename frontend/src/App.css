@@ -1,4 +1,14 @@
 /* general styling */
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+* {
+  font-family: 'Sora', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
   font-size: 15px;
 }
@@ -8,34 +18,158 @@ a {
   color: inherit;
 }
 
-/* displays plants list next to blog box */
-.index-container {
+.container {
   display: grid;
-  grid-template-columns: 80% 20%;
-  grid-gap: 10px;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
 }
+
+.main-container{
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+}
+
+@media (min-width: 720px) {
+
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .container .item {
+    grid-column: 1 / span 12;
+  }
+  
+  .container main{
+    grid-column: 1 / span 12;
+  }
+
+  .container .footer-section {
+    grid-column: 1 / span 12;
+  }
+  
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media ( max-width: 400px) and (min-width: 720px){
+  
+  .main-container .plant-box {
+    grid-column: 1 / span 12;
+  }
+  
+  
+  .main-container .blog-box {
+      grid-column: 1 / span 12;
+      grid-row: 4;
+    } 
+  
+  }
+
+@media (min-width: 720px) {
+  
+.main-container{
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.main-container .header-box {
+  grid-column: 1 / span 12;
+}
+
+.main-container .results-grid-container {
+    grid-column: 2 / span 12;
+  } 
+  
+.main-container .plant-box {
+    grid-column: 1 / span 10;
+  }
+  
+.main-container .blog-box {
+    grid-column: 11 / span 12;
+    grid-row: 3;
+  } 
+
+}
+
+@media (min-width: 1020px) {
+  
+  .main-container{
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .main-container .blog-box {
+      grid-row: 3;
+    } 
+  }
+
+  .card {
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+    border-radius: 14px;
+    background-color: white;
+  }
+  
+
+/* displays plants list next to blog box */
+/* .index-container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  /* grid-template-columns: repeat(12, 1fr); 
+  /* column-gap: 12px; 
+} */
+
+.index-container .results-grid-container {
+  grid-column: 1 / span 10;
+} 
+
+.index-container .item-1 {
+  grid-column: 1 / span 10;
+} 
+
+.index-container .blog-box {
+
+  grid-column: 11 / span 12; 
+} 
+
 
 /* displays the plant images in a grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  border: 2px solid rgb(76, 151, 69);
   padding: 15px;
   margin-left: 15px;
 }
 
 .blog-box {
-  border: 2px solid rgb(76, 151, 69);
   padding: 15px;
-  margin: 40px 15px 10px 0px;
-  text-align: left;
+  text-align: center;
 }
 
-@media screen and (max-width: 800px) {
+.blogContainer {
+  text-align: left;
+  margin: 10px;
+}
+
+.blogContainer a {
+  text-decoration: underline;
+}
+
+
+.blogContainer a li{
+  list-style-type: none;
+}
+
+
+/* @media screen and (max-width: 800px) {
   .blog-box {
     display: none;
   }
-}
+} */
 
 .plantContainer {
   text-align: center;
@@ -52,22 +186,49 @@ a {
   max-width: 130px;
 }
 
-/* search results */
-.results-grid-container {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(100px, 1fr));
-  border: 2px solid rgb(76, 151, 69);
-  max-height: 300px; /* set the maximum height */
-  overflow-y: scroll; /* enable vertical scrolling */
-  margin: 0px 6px 20px 15px;
+input[type="search" i] {
+  padding: 5px 20px;
+  border: 1px solid rgb(76, 151, 69);
+}
+
+.submit-btn {
+  padding: 5px 20px;
+  border: 1px solid rgb(76, 151, 69);
 }
 
 
+/* search results */
+.results-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  max-height: 400px; /* set the maximum height */
+  overflow-y: scroll; /*enable vertical scrolling */
+  margin: 0px 6px 20px 15px; 
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+  border-style: inset;
+}
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  }
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 14px;
+  }
+::-webkit-scrollbar-thumb {
+  border-radius: 14px;
+  background: #ccc;  
+  }
+  
 
 .resultContainer {
   padding: 10px 0px 10px 20px;
-  border-bottom: 2px solid rgb(76, 151, 69);
+  border-bottom: 1px solid rgb(76, 151, 69);
 }
 
 .resultContainer em {
@@ -101,14 +262,21 @@ a {
 
 /* //nav */
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: rgb(76, 151, 69);
+  color: white;
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
-  background-color: rgb(76, 151, 69);
-  color: white;
   padding: 15px;
-  font-size: 2em;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .align-left {
@@ -118,7 +286,60 @@ a {
 .nav a {
   color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin: 0 1rem;
+}
+
+nav a:hover {
+  color: rgba(0, 0, 0, 0.30);
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  display: none;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 800px){
+  header .nav-btn {
+    display: block;
+    opacity: 1;
+  }
+
+  header nav {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: rgb(76, 151, 69);
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    right: 2rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+
 }
 
 
@@ -140,11 +361,6 @@ input[type="submit" i] {
   text-align: center;
 }
 
-.header-box {
-  display: flex;
-  justify-content: space-between;
-  
-}
 
 .search-bar {
   display: flex;
@@ -157,13 +373,23 @@ text-align: right;
 margin-bottom: 20px;
 }
 
-/* .pagination .prev-btn {
-  margin-right: 7%
+.pagination .prev-btn {
+  border: 1px solid rgb(76, 151, 69);
+  border-radius: 8px;
+  margin-right: 5px;
+  padding: 4px;
 }
 
 .pagination .next-btn {
-  margin-left: 7%
-} */
+  border: 1px solid rgb(76, 151, 69);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.pagination .prev-btn:hover, .pagination .next-btn:hover {
+  background-color: #bdbaba;
+
+}
 
 
 .search-bar-dropdown{
@@ -173,7 +399,11 @@ margin-bottom: 20px;
 
 
 
+/* Footer section */
 
+.footer-section {
+  border: 1px solid rgb(76, 151, 69);
+}
 
 
 
