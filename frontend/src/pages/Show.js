@@ -7,7 +7,7 @@ function Show(props) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
   // const apiKey = "sk-3t2R642df04b75c19417";
-  const apiKey2 = "sk-WOd7643350463b93a473";
+  const apiKey2 = "sk-ynpn642f11225c738446";
 
   const getDetails = async () => {
     const details = `${props.detailsURL}${id}?key=${apiKey2}`;
