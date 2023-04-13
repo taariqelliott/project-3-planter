@@ -60,7 +60,7 @@ const Help = () => {
   return (
     <div className="app">
       {quiz && quiz.quiz && (
-        <div>
+        <div className="all">
           <Title title={quiz.quiz.title} subtitle={quiz.quiz.subtitle} />
           {quiz?.quiz.content?.map((contentItem) => (
             <QuestionsBlock
