@@ -15,7 +15,9 @@ const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
+
   const [blogs, setblog] = useState(null);
+
 
 // Function to get Blogs
 

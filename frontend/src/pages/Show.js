@@ -3,15 +3,17 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PlantDetails from "../components/PlantDetails";
 
-function Show(props) {
+function Show({detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
+  const [collection, setCollection] = useState({})
+  
   const apiKey = "sk-3t2R642df04b75c19417";
   const apiKey2 = "sk-X9wb64348fe4ec427434";
 
   const getDetails = async () => {
     // https://perenual.com/api/species/details/1?key=sk-3t2R642df04b75c19417
-    const details = `${props.detailsURL}${id}?key=${apiKey}`;
+    const details = `${detailsURL}${id}?key=${apiKey}`;
 
     const response = await fetch(details);
     const data = await response.json();
@@ -29,8 +31,8 @@ function Show(props) {
         <>
           <PlantDetails plant={plant} />
           <div>
-            <Link to={"/mycollections"} key={plant.id}>
-              <button>Add to my collection</button>
+            <Link to={"/mycollection"} key={plant.id}>
+              <button onClick={() => {setCollection(plant); console.log("setCollection", collection)}}>Add to my collection</button>
             </Link>
           </div>
         </>
