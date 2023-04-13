@@ -22,7 +22,7 @@ const QuestionBlock = ({
     >
       <img src={question.image} alt={question.alt} />
       <h3>{question.text}</h3>
-      <p>{question.alt}</p>
+      {/* <p>{question.alt}</p> */}
     </button>
   );
 };
