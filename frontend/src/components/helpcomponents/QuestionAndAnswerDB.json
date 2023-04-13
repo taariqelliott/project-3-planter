@@ -1,0 +1,128 @@
+{
+  "quiz": {
+    "title": "Plant Diagnostic",
+    "subtitle": "We're Here To Help",
+    "content": [
+      {
+        "id": "0",
+        "text": "What Color Is Your Plant?",
+        "questions": [
+          {
+            "text": "Green",
+            "image": "https://hips.hearstapps.com/hmg-prod/images/peace-lily-plant-in-a-bright-home-royalty-free-image-1659025455.jpg?resize=480:*",
+            "alt": "Green Plant"
+          },
+          {
+            "text": "Yellow",
+            "image": "https://www.hobbyplants.com/wp-content/uploads/2020/10/sick-Philodendron-leaf.jpg",
+            "alt": "Sick Yellow Plant"
+          },
+          {
+            "text": "Multicolored",
+            "image": "https://www.gardeningknowhow.com/wp-content/uploads/2009/07/yellow-leaves-1.jpg",
+            "alt": "Spotted Plant"
+          },
+          {
+            "text": "Brown",
+            "image": "https://media.istockphoto.com/id/1370967942/photo/calathea-houseplant-leaf-with-dry-brown-and-yellow-leaf-spots.jpg?s=612x612&w=0&k=20&c=feo3W01y4kKfXhlpNgKF25UK88vkRjaHOnxDn3oASas= ",
+            "alt": "Sick Brown Plant"
+          }
+        ]
+      },
+      {
+        "id": "1",
+        "text": "Roughly when was the last time it was watered?",
+        "questions": [
+          {
+            "text": "Today",
+            "image": "https://re-mm-assets.s3.amazonaws.com/product_photo/46575/large_large_Poly_HunterGreen_pms3308up_1471509931.jpg",
+            "alt": "today"
+          },
+          {
+            "text": "1-4 Days Ago",
+            "image": "https://re-mm-assets.s3.amazonaws.com/product_photo/46575/large_large_Poly_HunterGreen_pms3308up_1471509931.jpg",
+            "alt": "1-4 days ago"
+          },
+          {
+            "text": "4-7 Days Ago",
+            "image": "https://re-mm-assets.s3.amazonaws.com/product_photo/46575/large_large_Poly_HunterGreen_pms3308up_1471509931.jpg",
+            "alt": "4-7 days agp"
+          },
+          {
+            "text": "Over A Week Ago",
+            "image": "https://re-mm-assets.s3.amazonaws.com/product_photo/46575/large_large_Poly_HunterGreen_pms3308up_1471509931.jpg",
+            "alt": "over a week ago"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "text": "How Much Sunlight Does The Plant Get Daily?",
+        "questions": [
+          {
+            "text": "Less Than 1 Hour",
+            "image": "https://hips.hearstapps.com/hmg-prod/images/best-low-light-indoor-plants-1656090854.jpeg",
+            "alt": "plant"
+          },
+          {
+            "text": "1-3 Hours",
+            "image": "https://www.thespruce.com/thmb/HhoPFAKuMuAylRy95Z5SeUq3ryo=/5000x0/filters:no_upscale():max_bytes(150000):strip_icc()/pothos-an-easy-to-grow-houseplant-1403154-hero-fbcf9818c6ff4c3b9bf2d3eb4d0bfde0.jpg",
+            "alt": "plant"
+          },
+          {
+            "text": "3-7 Hours",
+            "image": "https://blog.omysa.com/wp-content/uploads/2020/07/ezgif.com-webp-to-jpg-16-1-1024x742.jpg",
+            "alt": "plant"
+          },
+          {
+            "text": "7-12 Hours",
+            "image": "https://blog.mytastefulspace.com/wp-content/uploads/2020/03/Fiddle-Leaf-Fig-Tree-scaled-e1585622646463.jpg",
+            "alt": "plant"
+          }
+        ]
+      }
+    ],
+    "answers": [
+      {
+        "combination": [
+          "Green",
+          "4-7 Days Ago",
+          "7-12 Hours"
+        ],
+        "text": "Your plant is healthy!",
+        "image": "https://media.istockphoto.com/id/1253236069/vector/watercolor-cute-cartoon-houseplant-in-pots-with-funny-happy-face-kawaii-potted-plants-hand.jpg?s=170667a&w=0&k=20&c=DI6f6IuHP7Mem0QXINTdGr2w0Oj9c8xHKozxtKsABo8=",
+        "alt": "happy plants"
+      },
+      {
+        "combination": [
+          "Yellow",
+          "1-4 Days Ago",
+          "3-7 Hours"
+        ],
+        "text": "I'm a little overwated! Leave me alone for a few days and place me in some light please!",
+        "image": "https://s3g2u3k4.rocketcdn.me/wp-content/uploads/sites/4/2023/02/zz-plant-problems.jpg",
+        "alt": "sickly plants"
+      },
+      {
+        "combination": [
+          "Multicolored",
+          "Over A Week Ago",
+          "1-3 Hours"
+        ],
+        "text": "It's my species! Don't worry some of my leaves turn yellow and fall off. It's not you. It's....me...",
+        "image": "https://thumbs.dreamstime.com/b/cute-sad-funny-monstera-plant-pot-vector-cartoon-character-illustration-icon-design-isolated-white-background-cute-sad-funny-185827045.jpg",
+        "alt": "nervous plant"
+      },
+      {
+        "combination": [
+          "Brown",
+          "Today",
+          "Less Than 1 Hour"
+        ],
+        "text": "I Don't Feel So Well...Call The Plantbulance!",
+        "image": "https://thumbs.dreamstime.com/b/flower-pot-sick-limping-stick-cartoon-mascot-vector-207478612.jpg",
+        "alt": "sick plant"
+      }
+    ]
+  }
+}

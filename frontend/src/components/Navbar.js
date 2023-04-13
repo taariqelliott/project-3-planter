@@ -30,6 +30,10 @@ const Navbar = (props) => {
           <div>Sign in</div>
         </Link>
 
+        <Link to="/help">
+          <div>Plant Diagnosis</div>
+        </Link>
+
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
