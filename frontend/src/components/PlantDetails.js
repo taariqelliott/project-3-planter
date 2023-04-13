@@ -13,9 +13,7 @@ function PlantDetails({ plant }) {
         <em>{plant.scientific_name}</em>
       </h2>
 
-      <p>
-        <strong>Description:</strong> {plant.description}
-      </p>
+      <strong>{plant.description}</strong>
 
       <p>
         <strong>Type:</strong> {plant.type}
