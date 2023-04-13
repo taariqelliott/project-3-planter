@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const PlantList = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setPlants] = useState([]);
 
   const loadPlants = async () => {
     const response = await fetch(
-      `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446`
+      `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`
     );
     const data = await response.json();
     setPlants(data.data);
@@ -18,7 +19,7 @@ const PlantList = (props) => {
   }, [page]);
 
   return (
-    <div>
+    <div className="plant-box card">
       <div className="pagination">
         <button
           class="prev-btn"
@@ -26,11 +27,11 @@ const PlantList = (props) => {
           disabled={page === 1}
         >
           {" "}
-          Prev{" "}
+          &lt; Prev{" "}
         </button>
         <button class="next-btn" onClick={() => setPage(page + 1)}>
           {" "}
-          Next{" "}
+          Next &gt;{" "}
         </button>
       </div>
 

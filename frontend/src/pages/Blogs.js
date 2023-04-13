@@ -6,8 +6,8 @@ function Blogs(props) {
 
   const loaded = () => {
     return (
-      <div className="blog-box">
-        <h2>Read Our Recent Blogs</h2>
+      <div className="blog-box card">
+        <h2>Read Our Recent Articles</h2>
         {
           
           props.blogs.map((blog) => (
