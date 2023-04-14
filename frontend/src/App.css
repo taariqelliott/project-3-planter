@@ -323,7 +323,7 @@ header .nav-btn {
     gap: 1.5rem;
     background-color: rgb(76, 151, 69);
     transition: 1s;
-    transform: translateY(-100vh);
+    transform: translateY(-50vh);
   }
 
   header .responsive_nav {
