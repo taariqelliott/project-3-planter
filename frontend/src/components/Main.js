@@ -13,6 +13,7 @@ import Collections from "../pages/Collections";
 import Help from "../pages/Help";
 
 
+
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
@@ -23,7 +24,7 @@ const Main = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-BhpZ64389dc4334a9517`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -113,7 +114,7 @@ const Main = (props) => {
 
 
   //Search Result page api and functions
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-ynpn642f11225c738446&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-BhpZ64389dc4334a9517&q=`;
   const [query, setQuery] = useState({
     slug: "", //the search term
     results: [], // Api's response
