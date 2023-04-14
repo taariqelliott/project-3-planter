@@ -1,6 +1,7 @@
 import Blogs from "./Blogs";
 import PlantList from "../components/PlantList";
 import SearchResult from "../components/SearchResult";
+import Slider from "../components/Slider/Slider"
 
 
 const Index = (props) => {
@@ -8,19 +9,21 @@ const Index = (props) => {
   const loaded = () => {
     return (
       <div className="main-container">
+        <Slider />
         <div className="header-box">
           <div className="search-bar">
             <form onSubmit={props.handleSubmit}>
               <input
                 type="search"
-                placeholder="Search"
+                placeholder="Plant Name"
                 onChange={props.querySet}
                 value={props.query.slug}
               />
-              <input type="submit" value="Submit" className="submit-btn" />
+              <input type="submit" value="Search" className="submit-btn" />
             </form>
           </div>
         </div>
+        
         <SearchResult query={props.query} />
         <PlantList plants={props.plants} />
         <Blogs blogs={props.blogs} />

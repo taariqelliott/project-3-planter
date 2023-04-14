@@ -8,7 +8,9 @@ const PlantList = (props) => {
 
   const loadPlants = async () => {
     const response = await fetch(
+
       `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`
+
     );
     const data = await response.json();
     setPlants(data.data);
