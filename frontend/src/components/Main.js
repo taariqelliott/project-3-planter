@@ -23,7 +23,9 @@ const Main = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
+  const [collection, setCollection] = useState([]);
+
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -176,7 +178,7 @@ const Main = (props) => {
         <Route
           exact
           path="/show/:id"
-          element={<Show URL={URL} detailsURL={detailsURL} />}
+          element={<Show URL={URL} detailsURL={detailsURL} collection={collection} setCollection={setCollection} />}
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs} />} />
         <Route
@@ -194,7 +196,7 @@ const Main = (props) => {
           path="/edit/:id"
           element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />}
         />
-        <Route exact path="/mycollection" element={<Collections />} />
+        <Route exact path="/mycollections" element={<Collections collection={collection} setCollection={setCollection}/>} />
         <Route exact path="/help" element={<Help />} />
         
       </Routes>
