@@ -25,7 +25,7 @@ const Main = (props) => {
 
   const [collection, setCollection] = useState([]);
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -113,9 +113,10 @@ const Main = (props) => {
     setPage(page + 1);
   };
 
+  
 
   //Search Result page api and functions
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-ynpn642f11225c738446&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-9K4o6433387bc1b25472&q=`;
   const [query, setQuery] = useState({
     slug: "", //the search term
     results: [], // Api's response
