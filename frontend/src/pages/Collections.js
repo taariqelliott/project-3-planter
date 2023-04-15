@@ -17,8 +17,10 @@ console.log(collection)
       <div>
         <h1>Collections Page</h1>
             <button 
-              onClick={() => setToggle(!toggle)} 
-              className="collections-page-btn ">
+              onClick={() => setToggle(!toggle)}
+              disabled={!localStorage.getItem("collection")}
+              className="collections-page-btn "
+              >
               Delete a Plant
             </button>
               <div className="grid-container">
