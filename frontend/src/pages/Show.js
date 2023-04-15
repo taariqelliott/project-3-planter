@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import PlantDetails from "../components/PlantDetails";
 
 function Show({collection, setCollection, detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
-  const apiKey = "sk-3t2R642df04b75c19417";
+  const apiKey = "sk-9K4o6433387bc1b25472";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {
@@ -42,9 +41,6 @@ function Show({collection, setCollection, detailsURL}) {
           <PlantDetails plant={plant} />
           <div>
               <button className="show-page-btn" onClick={addToCollection}>Add to my collection</button>
-            <Link to={"/mycollections"} key={plant.id}>
-              <button className="show-page-btn">Go to my collection</button>
-            </Link>
           </div>
         </>
       ) : (
