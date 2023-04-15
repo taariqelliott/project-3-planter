@@ -1,21 +1,22 @@
 /* //form settings */
 
-/* section {
+section {
   display: flex;
   justify-content: center;
-} */
+}
 
 .form-div {
   background-color: rgb(189, 216, 154);
-  /* padding: 30px;
+  border: 2px solid rgb(76, 151, 69);
+  border-radius: 5px;
+  padding: 10px 40px;
+  /* padding: 30px;F
   width: 80%; */
 }
 
 
 .form-div {
-  font-family: sans-serif;
   font-size: 16px;
-
 }
 
 .form-div * {
@@ -43,7 +44,7 @@
 }
 
 .form-input {
-  /* -webkit-appearance: none; */
+  -webkit-appearance: none;
   width: 100%;
   max-width: 425px;
 
@@ -51,7 +52,6 @@
   min-height: calc(0.9em + (0.8em * 2) + 0.6em);
   padding: 0.8em;
   font-size: 0.9em;
-  font-family: sans-serif;
 
   outline: none;
   border: 1px solid #dddddd;
@@ -66,4 +66,29 @@
 
 .form-input::placeholder {
   color: #bbbbbb;
+}
+
+
+textarea.form-input {
+  resize: none;
+  min-height: 200px;
+}
+
+.form-btn {
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 10px 16px;
+  margin: 10px 0;
+
+  color: #ffffff;
+  background-color: rgb(76, 151, 69);
+  border: 2px solid #0fa942;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.form-btn:focus, .form-btn:hover {
+  background: #0fa942 ;
 }

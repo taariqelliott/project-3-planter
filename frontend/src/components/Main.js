@@ -79,6 +79,7 @@ const Main = (props) => {
     console.log(blogForm);
   };
 
+
   //Update Blogs
 
   const updateBlogs = async (blog, id) => {

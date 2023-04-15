@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { format } from 'date-fns'
 
 const BlogShow = (props) => {
   const params = useParams();
@@ -15,13 +16,28 @@ const BlogShow = (props) => {
   };
 
 
+
+const formatDate = (newDate) => {
+  let d = new Date(blog.date)
+
+  let date = d.getDate();
+  let month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+  let year = d.getFullYear();
+  newDate = date + "/" + month + "/" + year;
+  console.log(newDate);
+  return newDate
+ }
+  
+
+
+
   return (
     <div className="show-box">
       <h1>{blog.title}</h1>
       <img src={blog.image} alt={blog.title} />
       <p>Created By: {blog.createdBy}</p>
       <p>{blog.description}</p>
-      <p>Date of creation: {blog.date}</p>
+      <p>Date of creation: {formatDate(blog.date)}</p>
        <Link to={`/edit/${blog._id}`} key={blog._id}>
         <button>Edit Blog</button>
       </Link>

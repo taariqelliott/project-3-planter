@@ -84,49 +84,70 @@ const New = (props) => {
               type="text"
               value={newForm.name}
               name="name"
-              placeholder="name"
+              placeholder="Enter plant name"
               onChange={handleChange}
             />
             </div>
-            <p>Wriiten By</p>
-            <input
+            <div className="form-item">
+            <label for="createdBy" className="form-label">
+            Author Name
+            </label>
+            <input className="form-input"
+              id="createdBy"
               type="text"
               value={newForm.createdBy}
               name="createdBy"
-              placeholder="name"
+              placeholder="Author Name"
               onChange={handleChange}
             />
-            <br />
-            <p>Image</p>
-            <input
-              type="text"
+            </div>
+            <div className="form-item">
+            <label for="image" className="form-label">
+            Image
+            </label>
+            <input className="form-input"
+              id="image"
+              type="file"
               value={newForm.image}
               name="image"
               placeholder="image URL"
               onChange={handleChange}
             />
-            <br />
-            <p>Description</p>
-            <input
-              type="text"
+            </div>
+            <div className="form-item">
+            <label for="message" className="form-label">
+            Message
+            </label>
+            <textarea className="form-input"
+              id="message"
+              type="textarea"
               value={newForm.description}
               name="description"
-              placeholder="text"
+              placeholder="Details about the plant"
               onChange={handleChange}
+              maxLength="500"
             />
-            <br />
+           </div>
 
-            <p>Date</p>
-            <input
+           <div className="form-item">
+
+           <label for="date" className="form-label">
+            Date
+            </label>
+            <input className="form-input"
+              id="date"
               type="date"
               value={newForm.date}
               name="date"
               placeholder="Date"
               onChange={handleChange}
             />
-            <br />
+            </div>
 
-            <input type="submit" value="Create Blog" />
+            <div className="form-item">
+              <button type="submit" className="form-btn">Create Blog</button>
+            </div>
+
           </form>
         
       </div>
