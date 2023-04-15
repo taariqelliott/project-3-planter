@@ -6,7 +6,7 @@ import PlantDetails from "../components/PlantDetails";
 function Show({collection, setCollection, detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
-  const apiKey = "sk-9K4o6433387bc1b25472";
+  const apiKey = "sk-3t2R642df04b75c19417";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {
@@ -18,20 +18,22 @@ function Show({collection, setCollection, detailsURL}) {
     setDetails(data);
   };
   
+  useEffect(() => {
+    getDetails();
+    // eslint-disable-next-line
+  }, [id]);
+
   function addToCollection() {
+
     setCollection([...collection, plant]);
   console.log("addToCollection", collection)
   }
   
   useEffect(() => {
-    localStorage.setItem('collection', JSON.stringify(plant));
+    localStorage.setItem('collection', JSON.stringify(collection));
   }, [collection]);
   
   console.log("show page stringify collection", collection)
-
-  useEffect(() => {
-    getDetails();
-  }, [id]);
 
   return (
     <div className="plant-details">
@@ -39,8 +41,9 @@ function Show({collection, setCollection, detailsURL}) {
         <>
           <PlantDetails plant={plant} />
           <div>
+              <button className="show-page-btn" onClick={addToCollection}>Add to my collection</button>
             <Link to={"/mycollections"} key={plant.id}>
-              <button onClick={addToCollection}>Add to my collection</button>
+              <button className="show-page-btn">Go to my collection</button>
             </Link>
           </div>
         </>
