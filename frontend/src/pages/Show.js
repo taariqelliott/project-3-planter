@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import PlantDetails from "../components/PlantDetails";
 
 function Show({collection, setCollection, detailsURL}) {
@@ -42,9 +41,6 @@ function Show({collection, setCollection, detailsURL}) {
           <PlantDetails plant={plant} />
           <div>
               <button className="show-page-btn" onClick={addToCollection}>Add to my collection</button>
-            <Link to={"/mycollections"} key={plant.id}>
-              <button className="show-page-btn">Go to my collection</button>
-            </Link>
           </div>
         </>
       ) : (
