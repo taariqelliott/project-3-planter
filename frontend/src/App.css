@@ -80,6 +80,10 @@ a {
   grid-column: 1 / span 12;
 }
 
+.main-container .slider {
+  grid-column: 2 / span 12;
+}
+
 .main-container .results-grid-container {
     grid-column: 2 / span 12;
   } 
@@ -90,7 +94,7 @@ a {
   
 .main-container .blog-box {
     grid-column: 11 / span 12;
-    grid-row: 3;
+    grid-row: 4;
   } 
 
 }
@@ -102,7 +106,7 @@ a {
   }
   
   .main-container .blog-box {
-      grid-row: 3;
+      grid-row: 4;
     } 
   }
 
@@ -148,6 +152,10 @@ a {
 .blog-box {
   padding: 15px;
   text-align: center;
+}
+
+.blog-box h2 {
+  font-size: 1.5rem;
 }
 
 .blogContainer {
@@ -323,7 +331,7 @@ header .nav-btn {
     gap: 1.5rem;
     background-color: rgb(76, 151, 69);
     transition: 1s;
-    transform: translateY(-100vh);
+    transform: translateY(-50vh);
   }
 
   header .responsive_nav {
