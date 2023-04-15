@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Blogs(props) {
-
-
   const loaded = () => {
     return (
       <div className="blog-box card">

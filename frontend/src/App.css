@@ -3,7 +3,6 @@
 
 * {
   font-family: 'Sora', sans-serif;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -18,9 +17,12 @@ a {
   color: inherit;
 }
 
+/* GRID SETTING */
+
 .container {
   display: grid;
   height: 100vh;
+  width: 100vw;
   grid-template-rows: auto 1fr auto;
   gap: 15px;
 }
@@ -56,7 +58,8 @@ a {
   justify-content: space-between;
 }
 
-@media ( max-width: 400px) and (min-width: 720px){
+/* 
+@media (min-width: 720px){
   
   .main-container .plant-box {
     grid-column: 1 / span 12;
@@ -68,7 +71,7 @@ a {
       grid-row: 4;
     } 
   
-  }
+  } */
 
 @media (min-width: 720px) {
   
@@ -77,7 +80,7 @@ a {
 }
 
 .main-container .header-box {
-  grid-column: 1 / span 12;
+  grid-column: 6 / span 12;
 }
 
 .main-container .slider {
@@ -99,7 +102,7 @@ a {
 
 }
 
-@media (min-width: 1020px) {
+/* @media (min-width: 720px) {
   
   .main-container{
     grid-template-columns: repeat(12, 1fr);
@@ -108,7 +111,7 @@ a {
   .main-container .blog-box {
       grid-row: 4;
     } 
-  }
+  } */
 
   .card {
     padding: 1rem;
@@ -269,10 +272,8 @@ input[type="search" i] {
 
 
 /* //nav */
-
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0 2rem;
@@ -282,10 +283,17 @@ header {
 
 .nav {
   display: flex;
-  justify-content: flex-end;
-  padding: 15px;
+  align-items: center;
   font-size: 1rem;
 }
+
+.logo-div {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+  align-items: center;
+}
+
 
 .align-left {
   text-align: left;
@@ -308,19 +316,21 @@ header .nav-btn {
   border: none;
   outline: none;
   color: #fff;
-  display: none;
+  visibility: hidden;
   opacity: 0;
   font-size: 1.8rem;
+  margin-top: 20px
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 915px){
   header .nav-btn {
-    display: block;
+    visibility: visible;
     opacity: 1;
   }
 
   header nav {
     position: fixed;
+    top: -100vh;
     left: 0;
     height: 100%;
     width: 100%;
@@ -331,15 +341,17 @@ header .nav-btn {
     gap: 1.5rem;
     background-color: rgb(76, 151, 69);
     transition: 1s;
-    transform: translateY(-50vh);
+    /* transform: translateY(-50vh); */
   }
 
   header .responsive_nav {
-    transform: none;
+    transform: translateY(100vh);
+    z-index: 50;
   }
 
   nav .nav-close-btn {
     position: absolute;
+    top: 2rem;
     right: 2rem;
   }
 
@@ -350,6 +362,7 @@ header .nav-btn {
 
 }
 
+/* end of nav setup */
 
 .form-div {
   padding: 20px;
@@ -403,6 +416,7 @@ margin-bottom: 20px;
 .search-bar-dropdown{
   list-style: none;
 }
+
 
 
 
