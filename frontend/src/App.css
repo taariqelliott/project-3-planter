@@ -428,4 +428,10 @@ margin-bottom: 20px;
 }
 
 
+/* collections */
+.collections-cont-ifempty{
+  color: rgb(31, 134, 64);
+  font-size: 100px;
+}
+
 

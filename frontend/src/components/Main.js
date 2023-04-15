@@ -31,7 +31,9 @@ const Main = (props) => {
     return initialValue || []
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-NRi8643b00a3e0a8f532
+
+  `;
 
 
   // Function to get list of Plants

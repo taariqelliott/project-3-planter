@@ -5,7 +5,9 @@ import PlantDetails from "../components/PlantDetails";
 function Show({collection, setCollection, detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
-  const apiKey = "sk-9K4o6433387bc1b25472";
+  const [addButtonVisible, setAddButtonVisible] = useState(true)
+
+  const apiKey = "sk-NRi8643b00a3e0a8f532";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {
@@ -25,6 +27,7 @@ function Show({collection, setCollection, detailsURL}) {
   function addToCollection() {
 
     setCollection([...collection, plant]);
+    setAddButtonVisible(false)
   console.log("addToCollection", collection)
   }
   
@@ -39,9 +42,11 @@ function Show({collection, setCollection, detailsURL}) {
       {plant ? (
         <>
           <PlantDetails plant={plant} />
+          {addButtonVisible && (
           <div>
               <button className="show-page-btn" onClick={addToCollection}>Add to my collection</button>
           </div>
+          )}
         </>
       ) : (
         <h1>Loading...</h1>
