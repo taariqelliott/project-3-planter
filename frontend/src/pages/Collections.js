@@ -19,7 +19,7 @@ console.log(collection)
             <button 
               onClick={() => setToggle(!toggle)} 
               className="collections-page-btn ">
-              Select and Delete Plants
+              Delete a Plant
             </button>
               <div className="grid-container">
                 {collection.map(plant => (
@@ -33,7 +33,7 @@ console.log(collection)
                     )}
                       <h3>{plant.common_name}</h3>
                         <Link to={`/show/${plant.id}`} key={plant.id}>
-                          <img src={plant.default_image.small_url} alt={plant.default_image.medium_url} />
+                          <img src={plant.default_image.small_url} alt={"https://cdn-icons-png.flaticon.com/512/2675/2675389.png"} />
                         </Link>
                   </div>
                 ))}
