@@ -25,9 +25,13 @@ const Main = (props) => {
   const [plants, setplants] = useState(null);
 
 
-  const [collection, setCollection] = useState([]);
+  const [collection, setCollection] = useState(() => {
+    const saved = localStorage.getItem("collection");
+    const initialValue = JSON.parse(saved);
+    return initialValue || []
+  });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
 
 
   // Function to get list of Plants
@@ -120,6 +124,7 @@ const Main = (props) => {
 
   //Search Result page api and functions
 
+
   const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-9K4o6433387bc1b25472&q=`;
 
   const [query, setQuery] = useState({
@@ -202,7 +207,7 @@ const Main = (props) => {
           path="/edit/:id"
           element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />}
         />
-        <Route exact path="/mycollections" element={<Collections collection={collection} setCollection={setCollection}/>} />
+        <Route exact path="/mycollections" element={<Collections collection={collection} />} />
         <Route exact path="/help" element={<Help />} />
         
       </Routes>

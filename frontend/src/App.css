@@ -381,20 +381,20 @@ text-align: right;
 margin-bottom: 20px;
 }
 
-.pagination .prev-btn {
+.pagination .prev-btn, .show-page-btn{
   border: 1px solid rgb(76, 151, 69);
   border-radius: 8px;
   margin-right: 5px;
   padding: 4px;
 }
 
-.pagination .next-btn {
+.pagination .next-btn, .show-page-btn {
   border: 1px solid rgb(76, 151, 69);
   border-radius: 8px;
   padding: 4px;
 }
 
-.pagination .prev-btn:hover, .pagination .next-btn:hover {
+.pagination .prev-btn:hover, .pagination .next-btn:hover, .show-page-btn:hover{
   background-color: #bdbaba;
 
 }

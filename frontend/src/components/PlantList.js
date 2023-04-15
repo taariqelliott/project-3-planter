@@ -9,7 +9,9 @@ const PlantList = (props) => {
   const loadPlants = async () => {
     const response = await fetch(
 
+
       `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`
+
 
     );
     const data = await response.json();
@@ -24,7 +26,7 @@ const PlantList = (props) => {
     <div className="plant-box card">
       <div className="pagination">
         <button
-          class="prev-btn"
+          className="prev-btn"
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
         >
