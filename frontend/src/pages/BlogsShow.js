@@ -21,6 +21,7 @@ const BlogShow = (props) => {
       <img src={blog.image} alt={blog.title} />
       <p>Created By: {blog.createdBy}</p>
       <p>{blog.description}</p>
+      <p>Date of creation: {blog.date}</p>
        <Link to={`/edit/${blog._id}`} key={blog._id}>
         <button>Edit Blog</button>
       </Link>
