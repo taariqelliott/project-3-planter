@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
 
-
 function Collections ({collection}) {
 
   const [toggle, setToggle] = useState(false)
