@@ -16,7 +16,7 @@ const SearchResult = (props) => {
               <img
                 className="result-image"
                 src={plant.default_image.thumbnail}
-                alt=""
+                alt="https://cdn-icons-png.flaticon.com/512/2675/2675389.png"
               />
               <em>{plant.scientific_name}</em> / {plant.common_name}
               <p>

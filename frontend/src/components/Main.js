@@ -24,7 +24,15 @@ const Main = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-BhpZ64389dc4334a9517`;
+
+  const [collection, setCollection] = useState(() => {
+    const saved = localStorage.getItem("collection");
+    const initialValue = JSON.parse(saved);
+    return initialValue || []
+  });
+
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`;
+
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -112,9 +120,13 @@ const Main = (props) => {
     setPage(page + 1);
   };
 
+  
 
   //Search Result page api and functions
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-BhpZ64389dc4334a9517&q=`;
+
+
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-9K4o6433387bc1b25472&q=`;
+
   const [query, setQuery] = useState({
     slug: "", //the search term
     results: [], // Api's response
@@ -177,7 +189,7 @@ const Main = (props) => {
         <Route
           exact
           path="/show/:id"
-          element={<Show URL={URL} detailsURL={detailsURL} />}
+          element={<Show URL={URL} detailsURL={detailsURL} collection={collection} setCollection={setCollection} />}
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs} />} />
         <Route
@@ -195,7 +207,7 @@ const Main = (props) => {
           path="/edit/:id"
           element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />}
         />
-        <Route exact path="/mycollection" element={<Collections />} />
+        <Route exact path="/mycollections" element={<Collections collection={collection} />} />
         <Route exact path="/help" element={<Help />} />
         
       </Routes>

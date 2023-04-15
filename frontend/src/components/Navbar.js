@@ -22,7 +22,6 @@ const Navbar = (props) => {
         <a href="/new">Create Blog</a>
         <a href="/new">Sign in</a>
 
-
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
