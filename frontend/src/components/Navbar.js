@@ -15,26 +15,13 @@ const Navbar = (props) => {
     <header className="item">
       <div className="logo-div"><h3>Logo</h3></div>
       <nav className="nav" ref={navRef}>
-        {/* <Link to="/plants">
-          <div>Home</div>
-        </Link> */}
+
         <a href="/">Home</a>
         <a href="/plants">All Plants</a>
-        <a href="/mycollection">My Collection</a>
+        <a href="/mycollections">My Collection</a>
         <a href="/new">Create Blog</a>
         <a href="/new">Sign in</a>
 
-        {/* <Link to="/mycollection">
-          <div>My Collections</div>
-        </Link> */}
-{/* 
-        <Link to="/new">
-          <div>Blog</div>
-        </Link>
-
-        <Link to="/#">
-          <div>Sign in</div>
-        </Link> */}
 
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
