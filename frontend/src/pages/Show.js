@@ -5,7 +5,7 @@ import PlantDetails from "../components/PlantDetails";
 function Show({collection, setCollection, detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
-  const apiKey = "sk-9K4o6433387bc1b25472";
+  const apiKey = "sk-NRi8643b00a3e0a8f532";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {

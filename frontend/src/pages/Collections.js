@@ -17,13 +17,18 @@ console.log(collection)
     return (
       <div>
         <h1>Collections Page</h1>
+        {localStorage.getItem("collection") && JSON.parse(localStorage.getItem("collection")).length !== 0 ? (
             <button 
               onClick={() => setToggle(!toggle)}
-              disabled={!localStorage.getItem("collection")}
-              className="collections-page-btn "
-              >
+              className="collections-page-btn">
               Delete a Plant
             </button>
+            ):(
+              <div className="collections-cont-ifempty">
+                <br></br><h2>No plants in your collection quite yet...</h2>
+                <img src={"https://planter123.s3.us-east-2.amazonaws.com/plant.jpg"} alt={""}/>
+              </div>
+            )}
               <div className="grid-container">
                 {collection.map(plant => (
                   <div className="plantContainer" key={plant.id}>
@@ -36,7 +41,7 @@ console.log(collection)
                     )}
                       <h3>{plant.common_name}</h3>
                         <Link to={`/show/${plant.id}`} key={plant.id}>
-                          <img src={plant.default_image.small_url} alt={"https://cdn-icons-png.flaticon.com/512/2675/2675389.png"} />
+                          <img src={plant.default_image.small_url} alt={""} />
                         </Link>
                   </div>
                 ))}
