@@ -10,6 +10,7 @@ function Collections ({collection}) {
     // array to include plants with different id's from the one provided in handleDelete
     const updatedCollection = collection.filter(plant => plant.id !== id)
     localStorage.setItem('collection', JSON.stringify(updatedCollection))
+    window.location.reload()
   }
 
 console.log(collection)
