@@ -31,7 +31,7 @@ const Main = (props) => {
     return initialValue || []
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`;
 
 
   // Function to get list of Plants
