@@ -11,6 +11,7 @@ import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
 import Help from "../pages/Help";
+import Logout from "../pages/Logout";
 
 
 
@@ -210,7 +211,7 @@ const Main = (props) => {
         <Route exact path="/mycollections" element={<Collections collection={collection} />} />
         <Route exact path="/help" element={<Help />} />
         <Route exact path="/login" />
-        <Route exact path="/logout" />
+        <Route exact path="/logout" element={<Logout/>}/>
         
       </Routes>
     </main>

@@ -4,12 +4,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./UserProfile"
 
-
 const Navbar = (props) => {
-
-
-  const { loginWithRedirect } = useAuth0()
-  const { logoutWithRedirect } = useAuth0()
+  
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   const navRef = useRef()
 
@@ -26,10 +23,11 @@ const Navbar = (props) => {
         <a href="/plants">All Plants</a>
         <a href="/mycollections">My Collection</a>
         <a href="/new">Create Blog</a>
-        <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
-        <a href="/logout" onClick={() => logoutWithRedirect({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
-
-       
+          {isAuthenticated ? (
+            <a href="/logout" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
+          ):(
+            <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
+          )}
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>

@@ -432,6 +432,10 @@ margin-bottom: 20px;
 
 .user-icon{
   border-radius: 50%;
-  max-width: 60px;
-  margin-top: 10px;
+  max-width: 50px;
+  margin-top: 7px;
+}
+.user-name{
+  font-size: 10px;
+  color: rgb(0, 0, 0);
 }
