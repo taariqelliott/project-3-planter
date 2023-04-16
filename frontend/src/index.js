@@ -21,7 +21,7 @@ root.render(
           <App />
         </React.StrictMode>
       </Router>
-    </Auth0Provider>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

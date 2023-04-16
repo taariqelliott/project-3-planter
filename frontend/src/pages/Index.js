@@ -4,6 +4,7 @@ import SearchResult from "../components/SearchResult";
 import Slider from "../components/Slider/Slider"
 
 
+
 const Index = (props) => {
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {

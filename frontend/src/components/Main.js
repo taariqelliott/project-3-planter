@@ -210,6 +210,7 @@ const Main = (props) => {
         <Route exact path="/mycollections" element={<Collections collection={collection} />} />
         <Route exact path="/help" element={<Help />} />
         <Route exact path="/login"  />
+        <Route exact path="/logout"  />
         
       </Routes>
     </main>
