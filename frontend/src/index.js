@@ -4,15 +4,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import router
 import { BrowserRouter as Router } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
+
 
 // wrap our application inside of router to enable using router
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+  <Auth0Provider
+    domain="dev-1dehcywdcu8cohff.us.auth0.com"
+    clientId="qcIO0l3ADmXbl8n3uTdcBP8CyRyBwyrR"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -7,7 +7,7 @@ function Show({collection, setCollection, detailsURL}) {
   const [plant, setDetails] = useState(null);
   const [addButtonVisible, setAddButtonVisible] = useState(true)
 
-  const apiKey = "sk-NRi8643b00a3e0a8f532";
+  const apiKey = "sk-XUDG643b3f5d6fc87533";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {
