@@ -4,16 +4,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+//   if (isLoading) {
+//     return <div>Loading...</div>;
+//   }
 
   return (
     isAuthenticated && (
-      <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>Welcome back, {user.name}!</h2>
-
+      <div className="user-container">
+        <img className="user-icon"src={user.picture} alt={user.name} />
+        <h2>Welcome back, {user.name}</h2>
       </div>
     )
   );

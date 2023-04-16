@@ -417,10 +417,6 @@ margin-bottom: 20px;
   list-style: none;
 }
 
-
-
-
-
 /* Footer section */
 
 .footer-section {
@@ -434,4 +430,8 @@ margin-bottom: 20px;
   font-size: 100px;
 }
 
-
+.user-icon{
+  border-radius: 50%;
+  max-width: 60px;
+  margin-top: 10px;
+}
