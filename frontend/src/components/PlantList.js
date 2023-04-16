@@ -10,7 +10,7 @@ const PlantList = (props) => {
     const response = await fetch(
 
 
-      `https://perenual.com/api/species-list?page=${page}&key=sk-XUDG643b3f5d6fc87533`
+      `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472`
 
 
     );
