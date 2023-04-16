@@ -31,9 +31,7 @@ const Main = (props) => {
     return initialValue || []
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-NRi8643b00a3e0a8f532
-
-  `;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-XUDG643b3f5d6fc87533`;
 
 
   // Function to get list of Plants
@@ -211,6 +209,7 @@ const Main = (props) => {
         />
         <Route exact path="/mycollections" element={<Collections collection={collection} />} />
         <Route exact path="/help" element={<Help />} />
+        <Route exact path="/login"  />
         
       </Routes>
     </main>

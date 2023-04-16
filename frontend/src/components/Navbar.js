@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { useRef} from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 
 
 const Navbar = (props) => {
 
-  const navRef = useRef();
+
+  const { loginWithRedirect } = useAuth0()
+  const { logout } = useAuth0()
+
+  const navRef = useRef()
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
@@ -19,7 +26,8 @@ const Navbar = (props) => {
         <a href="/plants">All Plants</a>
         <a href="/mycollections">My Collection</a>
         <a href="/new">Create Blog</a>
-        <a href="/new">Sign in</a>
+        <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
+        <a href="/logout" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
 
        
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
