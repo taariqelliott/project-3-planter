@@ -384,10 +384,6 @@ margin-bottom: 20px;
   list-style: none;
 }
 
-
-
-
-
 /* Footer section */
 
 
@@ -396,6 +392,7 @@ margin-bottom: 20px;
   color: rgb(31, 134, 64);
   font-size: 100px;
 }
+
 
 
 
@@ -446,5 +443,15 @@ margin-bottom: 20px;
 
 .footer-text {
   color: #fff
+}
+
+.user-icon{
+  border-radius: 50%;
+  max-width: 50px;
+  margin-top: 7px;
+}
+.user-name{
+  font-size: 10px;
+  color: rgb(0, 0, 0);
 }
 
