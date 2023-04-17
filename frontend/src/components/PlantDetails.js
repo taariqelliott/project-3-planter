@@ -1,98 +1,98 @@
 import React from "react";
-import "../pages/show.css"
+import "../pages/show.css";
 
 function PlantDetails({ plant }) {
   return (
     <div className="show-container">
       <div className="image-box">
-      <img
-        className="show-img"
-        src={plant.default_image.regular_url}
-        alt={plant.common_name}
-      />
+        <img
+          className="show-img"
+          src={plant.default_image.regular_url}
+          alt={plant.common_name}
+        />
       </div>
       <div className="show-content">
-      <h1>{plant.common_name}</h1>
-      <h2>
-        <em>{plant.scientific_name}</em>
-      </h2>
+        <h1>{plant.common_name}</h1>
+        <h2>
+          <em>{plant.scientific_name}</em>
+        </h2>
 
-      {plant.description}
+        {plant.description}
 
-      <p>
-        <strong>Type:</strong> {plant.type}
-      </p>
-
-      {plant.origin && plant.origin.length > 0 && (
         <p>
-          <strong>Origin:</strong> {plant.origin.join(", ")}
+          <strong>Type:</strong> {plant.type}
         </p>
-      )}
 
-      <p>
-        <strong>Growth Rate:</strong> {plant.growth_rate}
-      </p>
+        {plant.origin && plant.origin.length > 0 && (
+          <p>
+            <strong>Origin:</strong> {plant.origin.join(", ")}
+          </p>
+        )}
 
-      <p>
-        <strong>Dimension:</strong> {plant.dimension}
-      </p>
-
-      <p>
-        <strong>Cycle:</strong> {plant.cycle}
-      </p>
-
-      <p>
-        <strong>Watering:</strong> {plant.watering}
-      </p>
-
-      <p>
-        <strong>Hardiness:</strong>{" "}
-        {plant.hardiness && `${plant.hardiness.min}-${plant.hardiness.max}`}
-      </p>
-
-      {plant.sunlight && plant.sunlight.length > 0 && (
         <p>
-          <strong>Sunlight:</strong> {plant.sunlight.join(", ")}
+          <strong>Growth Rate:</strong> {plant.growth_rate}
         </p>
-      )}
 
-      {plant.soil && plant.soil.length > 0 && (
         <p>
-          <strong>Soil:</strong> {plant.soil.join(", ")}
+          <strong>Dimension:</strong> {plant.dimension}
         </p>
-      )}
 
-      <p>
-        <strong>Tropical:</strong> {plant.tropical ? "Yes" : "No"}
-      </p>
-
-      <p>
-        <strong>Invasive:</strong> {plant.invasive ? "Yes" : "No"}
-      </p>
-
-      {plant.propagation && plant.propagation.length > 0 && (
         <p>
-          <strong>Propagation:</strong> {plant.propagation.join(", ")}
+          <strong>Cycle:</strong> {plant.cycle}
         </p>
-      )}
 
-      {plant.maintenance && (
         <p>
-          <strong>Maintenance:</strong> {plant.maintenance}
+          <strong>Watering:</strong> {plant.watering}
         </p>
-      )}
 
-      {plant.other_name && plant.other_name.length > 0 && (
         <p>
-          <strong>Other Names:</strong> {plant.other_name.join(", ")}
+          <strong>Hardiness:</strong>{" "}
+          {plant.hardiness && `${plant.hardiness.min}-${plant.hardiness.max}`}
         </p>
-      )}
 
-      {plant.family && (
+        {plant.sunlight && plant.sunlight.length > 0 && (
+          <p>
+            <strong>Sunlight:</strong> {plant.sunlight.join(", ")}
+          </p>
+        )}
+
+        {plant.soil && plant.soil.length > 0 && (
+          <p>
+            <strong>Soil:</strong> {plant.soil.join(", ")}
+          </p>
+        )}
+
         <p>
-          <strong>Family:</strong> {plant.family}
+          <strong>Tropical:</strong> {plant.tropical ? "Yes" : "No"}
         </p>
-      )}
+
+        <p>
+          <strong>Invasive:</strong> {plant.invasive ? "Yes" : "No"}
+        </p>
+
+        {plant.propagation && plant.propagation.length > 0 && (
+          <p>
+            <strong>Propagation:</strong> {plant.propagation.join(", ")}
+          </p>
+        )}
+
+        {plant.maintenance && (
+          <p>
+            <strong>Maintenance:</strong> {plant.maintenance}
+          </p>
+        )}
+
+        {plant.other_name && plant.other_name.length > 0 && (
+          <p>
+            <strong>Other Names:</strong> {plant.other_name.join(", ")}
+          </p>
+        )}
+
+        {plant.family && (
+          <p>
+            <strong>Family:</strong> {plant.family}
+          </p>
+        )}
       </div>
     </div>
   );

@@ -57,9 +57,20 @@ const PlantList = () => {
               <Link to={`/show/${plant.id}`} key={plant.id}>
                 <img
                   className="plant-image"
-                  src={plant.default_image.thumbnail}
+                  src={
+                    // render a placeholder image with a blur if there is no image from the api
+                    plant.default_image.thumbnail
+                      ? plant.default_image.thumbnail
+                      : "https://i.imgur.com/MqCdOKp.png"
+                  }
+                  style={
+                    plant.default_image.thumbnail
+                      ? {}
+                      : { filter: "blur(2px)", filter: "brightness(50%)" }
+                  }
                   alt={plant.common_name}
                 />
+
                 <p>
                   <strong>
                     {plant.common_name
