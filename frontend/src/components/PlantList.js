@@ -8,11 +8,7 @@ const PlantList = (props) => {
 
   const loadPlants = async () => {
     const response = await fetch(
-
-
-      `https://perenual.com/api/species-list?page=${page}&key=sk-XUDG643b3f5d6fc87533`
-
-
+      `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`
     );
     const data = await response.json();
     setPlants(data.data);
@@ -46,7 +42,7 @@ const PlantList = (props) => {
               <Link to={`/show/${plant.id}`} key={plant.id}>
                 <img
                   className="plant-image"
-                  src={plant.default_image.thumbnail}
+                  src={plant.default_image.regular_url}
                   alt={plant.common_name}
                 />
                 <p>

@@ -1,0 +1,73 @@
+
+.show-container {
+  display: flex;
+
+}
+
+.align-left {
+  text-align: left;
+}
+
+
+.show-img {
+  border: 5px solid rgb(19, 52, 18);
+  border-radius: 5px;
+}
+.show-img {
+  margin: 15px;
+}
+
+.show-content {
+  padding: 10px 20px;
+  line-height: 35px;
+  text-align: left;
+}
+
+.show-page-btn {
+  width: 200px;
+  background-color: rgb(19, 52, 18);
+  color: #ffffff;
+  margin-right: 20px;
+}
+.btn-lg {
+  background-color: rgb(19, 52, 18);
+  color: #ffffff;
+  margin-right: 2%;
+  outline: none;
+  border: 1px solid yellow;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-lg:hover {
+  background-color: rgb(111, 205, 107);
+  color: #000000;
+}
+
+.show-page-btn:hover {
+  width: 200px;
+  background-color: rgb(111, 205, 107);
+  color: #000000;
+}
+
+.plant-details {
+  display: flex;
+}
+
+@media (max-width: 1020px){
+
+  .plant-details {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .show-container {
+      flex-direction: column;
+    }
+
+    .show-page-btn {
+      margin-right: 0;
+    }
+
+  }

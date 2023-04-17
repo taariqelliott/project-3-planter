@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
 
-* {
-    font-family: 'Montserrat', sans-serif;
-}
 
 body {
     
@@ -14,25 +11,26 @@ body {
 .app {
     width: 37.5rem;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
+.app h1 {
     font-size: 2.5rem;
     line-height: 1.05;
     text-align: center;
 }
 
-h2 {
+.app h2 {
     font-size: 3rem;
     line-height: 1.05;
     text-align: center;
 }
 
-h3 {
+.app h3 {
     margin: 0.625rem;
 }
 
-p {
+.app p {
     font-size: 1.125rem;
     line-height: 1.2;
 }

@@ -32,7 +32,9 @@ const Main = (props) => {
     return initialValue || []
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-XUDG643b3f5d6fc87533`;
+
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
+
 
 
   // Function to get list of Plants
@@ -80,6 +82,7 @@ const Main = (props) => {
     console.log(blogForm);
   };
 
+
   //Update Blogs
 
   const updateBlogs = async (blog, id) => {
@@ -126,7 +129,7 @@ const Main = (props) => {
   //Search Result page api and functions
 
 
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-9K4o6433387bc1b25472&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-3t2R642df04b75c19417&q=`;
 
   const [query, setQuery] = useState({
     slug: "", //the search term
@@ -190,7 +193,7 @@ const Main = (props) => {
         <Route
           exact
           path="/show/:id"
-          element={<Show URL={URL} detailsURL={detailsURL} collection={collection} setCollection={setCollection} />}
+          element={<Show URL={ALL_PLANTS_API} detailsURL={detailsURL} collection={collection} setCollection={setCollection} />}
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs} />} />
         <Route

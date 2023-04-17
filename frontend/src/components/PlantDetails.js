@@ -1,19 +1,23 @@
 import React from "react";
+import "../pages/show.css"
 
 function PlantDetails({ plant }) {
   return (
-    <div>
+    <div className="show-container">
+      <div className="image-box">
       <img
-        className="plant-image"
-        src={plant.default_image.medium_url}
+        className="show-img"
+        src={plant.default_image.regular_url}
         alt={plant.common_name}
       />
+      </div>
+      <div className="show-content">
       <h1>{plant.common_name}</h1>
       <h2>
         <em>{plant.scientific_name}</em>
       </h2>
 
-      <strong>{plant.description}</strong>
+      {plant.description}
 
       <p>
         <strong>Type:</strong> {plant.type}
@@ -89,6 +93,7 @@ function PlantDetails({ plant }) {
           <strong>Family:</strong> {plant.family}
         </p>
       )}
+      </div>
     </div>
   );
 }
