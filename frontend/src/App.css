@@ -379,6 +379,16 @@ margin-bottom: 20px;
 
 }
 
+.toggle-container button {
+  border: 1px solid rgb(76, 151, 69);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.toggle-container button:hover {
+  background-color: #bdbaba;
+}
+
 
 .search-bar-dropdown{
   list-style: none;
