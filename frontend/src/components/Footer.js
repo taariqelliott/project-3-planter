@@ -23,7 +23,7 @@ const Footer = (props) => {
             <p className="footer-text">
               Copyright &copy; Taariq, Alina, Sam, Rezwana <span id="year">{new Date().getFullYear()}</span>
             </p>
-            <p className="footer-text">
+            <div className="footer-text">
               For any inquiry <strong>email:</strong>{" "}
               <div className="footer-link">
                 <a href="mailto:alina.polianska@yahoo.com">Alina</a>
@@ -31,7 +31,7 @@ const Footer = (props) => {
                 <a href="mailto:taariq.elliott@yahoo.com">Taariq Elliott</a>
                 <a href="mailto:rezwanatech@gmail.com">Rezwana Sultana</a>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>
