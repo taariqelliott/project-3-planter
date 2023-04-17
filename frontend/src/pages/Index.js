@@ -25,7 +25,7 @@ const Index = (props) => {
         </div>
         
         <SearchResult query={props.query} />
-        <PlantList plants={props.plants} />
+        <PlantList plants={props.plants} URL={props.URL}/>
         <Blogs blogs={props.blogs} />
 
       </div>

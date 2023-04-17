@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Form.css'
 
 const New = (props) => {
+
+  const navigate = useNavigate()
   const [newForm, setNewForm] = useState({
     title: "",
     name: "",
@@ -25,10 +28,11 @@ const New = (props) => {
       title: "",
       name: "",
       createdBy: "",
-      image: "",
+      image: " ",
       description: "",
       date: Date
     });
+    navigate("/blogs")
   };
 
   // // data is loaded
@@ -110,7 +114,8 @@ const New = (props) => {
               type="file"
               value={newForm.image}
               name="image"
-              placeholder="image URL"
+              accept="uploads/*"
+              placeholder="image"
               onChange={handleChange}
             />
             </div>
@@ -144,7 +149,7 @@ const New = (props) => {
             />
             </div>
 
-            <div className="form-item">
+            <div className="form-item btn-row">
               <button type="submit" className="form-btn">Create Blog</button>
             </div>
 

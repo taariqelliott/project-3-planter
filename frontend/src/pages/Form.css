@@ -1,19 +1,14 @@
 /* //form settings */
 
-section {
+/* section {
   display: flex;
   justify-content: center;
-}
-
+} */
 .form-div {
   background-color: rgb(189, 216, 154);
-  border: 2px solid rgb(76, 151, 69);
   border-radius: 5px;
   padding: 10px 40px;
-  /* padding: 30px;F
-  width: 80%; */
 }
-
 
 .form-div {
   font-size: 16px;
@@ -44,7 +39,6 @@ section {
 }
 
 .form-input {
-  -webkit-appearance: none;
   width: 100%;
   max-width: 425px;
 
@@ -78,7 +72,7 @@ textarea.form-input {
   font-weight: 600;
   font-size: 1.1em;
   padding: 10px 16px;
-  margin: 10px 0;
+  margin: 15px 0;
 
   color: #ffffff;
   background-color: rgb(76, 151, 69);
@@ -87,6 +81,10 @@ textarea.form-input {
   cursor: pointer;
   outline: none;
 
+}
+
+.btn-row {
+  margin-left: 120px;
 }
 
 .form-btn:focus, .form-btn:hover {

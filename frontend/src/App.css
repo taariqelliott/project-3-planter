@@ -1,5 +1,5 @@
 /* general styling */
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&family=PT+Sans&family=Sora:wght@400;500;600;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 * {
   font-family: 'Sora', sans-serif;
@@ -22,22 +22,20 @@ a {
 .container {
   display: grid;
   height: 100vh;
-  width: 100vw;
   grid-template-rows: auto 1fr auto;
   gap: 15px;
 }
 
 .main-container{
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
   gap: 10px;
 }
 
 @media (min-width: 720px) {
 
-  .container {
+  /* .container {
     grid-template-columns: repeat(12, 1fr);
-  }
+  } */
 
   .container .item {
     grid-column: 1 / span 12;
@@ -58,20 +56,7 @@ a {
   justify-content: space-between;
 }
 
-/* 
-@media (min-width: 720px){
-  
-  .main-container .plant-box {
-    grid-column: 1 / span 12;
-  }
-  
-  
-  .main-container .blog-box {
-      grid-column: 1 / span 12;
-      grid-row: 4;
-    } 
-  
-  } */
+/* //main container setup */
 
 @media (min-width: 720px) {
   
@@ -83,6 +68,10 @@ a {
   grid-column: 6 / span 12;
 }
 
+.main-container section {
+  grid-column: 1 / span 12;
+}
+
 .main-container .slider {
   grid-column: 2 / span 12;
 }
@@ -92,43 +81,24 @@ a {
   } 
   
 .main-container .plant-box {
-    grid-column: 1 / span 10;
-  }
-  
+  grid-column: 1 / span 10;
+}
+
 .main-container .blog-box {
-    grid-column: 11 / span 12;
-    grid-row: 4;
-  } 
+  grid-column: 11 / span 12;
+  grid-row: 4;
+}
 
 }
 
-/* @media (min-width: 720px) {
-  
-  .main-container{
-    grid-template-columns: repeat(12, 1fr);
-  }
-  
-  .main-container .blog-box {
-      grid-row: 4;
-    } 
-  } */
 
-  .card {
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
-    border-radius: 14px;
-    background-color: white;
-  }
-  
 
-/* displays plants list next to blog box */
-/* .index-container {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 1fr auto;
-  /* grid-template-columns: repeat(12, 1fr); 
-  /* column-gap: 12px; 
-} */
+.card {
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+  border-radius: 14px;
+  background-color: white;
+}
 
 .index-container .results-grid-container {
   grid-column: 1 / span 10;
@@ -200,6 +170,8 @@ a {
 input[type="search" i] {
   padding: 5px 20px;
   border: 1px solid rgb(76, 151, 69);
+
+  max-width: 425px;
 }
 
 .submit-btn {
@@ -263,12 +235,7 @@ input[type="search" i] {
 }
 
 /* show page */
-.plant-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 
 
 /* //nav */
@@ -423,10 +390,6 @@ margin-bottom: 20px;
 
 /* Footer section */
 
-.footer-section {
-  border: 1px solid rgb(76, 151, 69);
-}
-
 
 /* collections */
 .collections-cont-ifempty{
@@ -434,4 +397,54 @@ margin-bottom: 20px;
   font-size: 100px;
 }
 
+
+
+/* //Footer section */
+
+
+.footer-section {
+
+  background-color: rgb(118, 185, 111);
+  /* min-height: 200px; */
+  height: 100%;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.flex-div {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.flex-div > .footer-content {
+  max-width: 40%;
+  color: #ffffff;
+  line-height: 25px;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.flex-div > .footer-content > h3 {
+  max-width: 50%;
+  color: #052d0f;
+  font-size: 20px;
+}
+
+.footer-link > a {
+  text-decoration: underline;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
+.footer-text {
+  color: #fff
+}
 
