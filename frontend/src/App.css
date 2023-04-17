@@ -158,6 +158,10 @@ a {
   margin-bottom: 20px;
 }
 
+.plantContainer p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 .plant-image {
   height: auto;
@@ -165,6 +169,9 @@ a {
   border-radius: 5px;
   min-width: 70px;
   max-width: 130px;
+  border-style: hidden;
+  border-radius: 10%;
+  box-shadow: 0 2px 8px rgb(31, 61, 29, 0.6);
 }
 
 input[type="search" i] {
