@@ -18,9 +18,11 @@ const Navbar = (props) => {
       <div className="logo-div"><h3>Logo</h3></div>
       <Profile/>
       <nav className="nav" ref={navRef}>
+
         <a href="/">Home</a>
         <a href="/plants">All Plants</a>
         <a href="/new">Create Blog</a>
+
           {isAuthenticated ? (
             <>
             <a href="/mycollections">My Collection</a>
@@ -29,6 +31,7 @@ const Navbar = (props) => {
           ):(
             <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
           )}
+
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
