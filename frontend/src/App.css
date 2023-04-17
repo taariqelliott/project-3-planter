@@ -352,7 +352,7 @@ input[type="submit" i] {
 
 .search-bar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 5px 20px;
 }
 
@@ -386,6 +386,16 @@ margin-bottom: 20px;
 }
 
 .toggle-container button:hover {
+  background-color: #bdbaba;
+}
+
+.search-bar input {
+  border: 1px solid rgb(76, 151, 69);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.search-bar input:hover {
   background-color: #bdbaba;
 }
 
