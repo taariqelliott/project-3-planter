@@ -36,21 +36,21 @@ const Navbar = (props) => {
           ):(
             <>
               <Popup trigger={
-                <div>
+                <div >
                   <a href="/#" onClick={handleLinkClick}>Create Blog</a>
                   <a href="/#">My Collection</a>
                 </div>
 
               }modal nested>
                 {close => (
-                          <div className='modal'>
-                            <h4>Popup header</h4>
+                          <div className='popup-window'>
+                            <h4>Please login to proceed to the page:</h4>
                                 <div>
-                                  <button onClick=
+                                  <button className="close" tabindex="0" onClick=
                                     {() => close()}>
-                                        Close 
+                                  <FaTimes />
                                   </button>
-                                   <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
+                                   <button onClick={() => loginWithRedirect()}>Log in</button>
                                  </div>
                           </div>
                 )}
@@ -59,7 +59,7 @@ const Navbar = (props) => {
             <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
             </>
             )}
-            
+
           <Profile/>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
