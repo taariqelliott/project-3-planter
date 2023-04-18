@@ -2,6 +2,8 @@ import { useRef} from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./UserProfile"
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const Navbar = (props) => {
   
@@ -12,31 +14,57 @@ const Navbar = (props) => {
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
   }
+  const handleLinkClick = (event) => {
+    event.preventDefault();
+  };
+
 
   return (
     <header className="item">
       <div className="logo-div"><h3>Logo</h3></div>
-      <Profile/>
       <nav className="nav" ref={navRef}>
 
         <a href="/">Home</a>
         <a href="/plants">All Plants</a>
-        <a href="/new">Create Blog</a>
 
           {isAuthenticated ? (
             <>
-            <a href="/mycollections">My Collection</a>
+        <a href="/new">Create Blog</a>
+        <a href="/mycollections" >My Collection</a>
             <a href="/logout" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
-            </>
+          </>
           ):(
-            <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
-          )}
+            <>
+              <Popup trigger={
+                <div>
+                  <a href="/#" onClick={handleLinkClick}>Create Blog</a>
+                  <a href="/#">My Collection</a>
+                </div>
 
+              }modal nested>
+                {close => (
+                          <div className='modal'>
+                            <h4>Popup header</h4>
+                                <div>
+                                  <button onClick=
+                                    {() => close()}>
+                                        Close 
+                                  </button>
+                                   <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
+                                 </div>
+                          </div>
+                )}
+              </Popup>
+
+            <a href="/login" onClick={() => loginWithRedirect()}>Log in</a>
+            </>
+            )}
+            
+          <Profile/>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
       </nav>
-
       <button className="nav-btn" onClick={showNavbar}>
           <FaBars />
       </button>
