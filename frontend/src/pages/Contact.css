@@ -1,0 +1,71 @@
+.contactDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .contact1 {
+    background: linear-gradient(to bottom, #0057c7, #76b96f);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.70);
+    transition: all 0.3s ease;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .contact1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .name {
+    text-align: right;
+    font-size: 24px;
+    color: #052d0f;
+    margin-bottom: 10px;
+  }
+  
+  .picture {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .linkedDiv {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .icon {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .linkedInWord {
+    font-size: 18px;
+    color: #052d0f;
+    text-decoration: none;
+  }
+  
+  .linkedInWord:hover {
+    color: #f2ffc8;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .contactDiv {
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact1 {
+      width: 80%;
+      margin: 10px;
+    }
+  }
+  

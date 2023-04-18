@@ -16,7 +16,7 @@ const Footer = (props) => {
         </div>
         <div>
           <div className="footer-link">
-            <a href="/#">Contact us</a>
+            <a href="/contact">Contact Us</a>
             <a href="/help">Diagnose Your Plant</a>
           </div>
           <div className="top-margin">
