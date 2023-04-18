@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useRef} from "react"
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -16,7 +15,7 @@ const Navbar = (props) => {
 
   return (
     <header className="item">
-      <div className="logo-div"><h3>Logo</h3></div>
+      <div className="logo-div"><a href="/"><img className="plantlogo" src="https://i.imgur.com/HqoLHeR.png" alt="" /></a></div>
       <Profile/>
       <nav className="nav" ref={navRef}>
 

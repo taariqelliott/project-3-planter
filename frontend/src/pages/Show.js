@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import PlantDetails from "../components/PlantDetails";
 
 function Show({collection, setCollection, detailsURL}) {
   const { id } = useParams();
   const [plant, setDetails] = useState(null);
   const [addButtonVisible, setAddButtonVisible] = useState(true)
+  const { isAuthenticated } = useAuth0();
 
-  const apiKey = "sk-XUDG643b3f5d6fc87533";
+  const apiKey = "sk-WOd7643350463b93a473";
   // const apiKey2 = "sk-ynpn642f11225c738446";
   
   const getDetails = async () => {
@@ -19,8 +21,17 @@ function Show({collection, setCollection, detailsURL}) {
     setDetails(data);
   };
   
+  function checkCollection(){
+    let convertedId = parseInt(id)
+    if (collection.find(p => p.id === convertedId)) {
+      setAddButtonVisible(false);
+    }
+    console.log("validation",convertedId)
+  }
+
   useEffect(() => {
     getDetails();
+    checkCollection()
     // eslint-disable-next-line
   }, [id]);
 
@@ -42,7 +53,7 @@ function Show({collection, setCollection, detailsURL}) {
       {plant ? (
         <>
           <PlantDetails plant={plant} />
-          {addButtonVisible && (
+          {addButtonVisible && isAuthenticated && (
           <div>
               <button className="show-page-btn" onClick={addToCollection}>Add to my collection</button>
           </div>
