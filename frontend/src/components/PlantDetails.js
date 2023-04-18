@@ -9,12 +9,12 @@ function PlantDetails({ plant }) {
           className="show-img"
           src={
             // render a placeholder image with a blur if there is no image from the api
-            plant.default_image.regular_url
+            plant.default_image && plant.default_image.regular_url
               ? plant.default_image.regular_url
               : "https://i.imgur.com/MqCdOKp.png"
           }
           style={
-            plant.default_image.regular_url
+            plant.default_image && plant.default_image.regular_url
               ? {}
               : {
                   filter: "blur(2px)",
