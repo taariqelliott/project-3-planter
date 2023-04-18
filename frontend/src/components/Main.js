@@ -12,6 +12,7 @@ import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
 import Help from "../pages/Help";
 import Logout from "../pages/Logout";
+import Contact from "../pages/Contact";
 
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
@@ -216,6 +217,7 @@ const Main = (props) => {
         <Route exact path="/help" element={<Help />} />
         <Route exact path="/login" />
         <Route exact path="/logout" element={<Logout />} />
+        <Route exact path="/contact" element={<Contact />}/>
       </Routes>
     </main>
   );
