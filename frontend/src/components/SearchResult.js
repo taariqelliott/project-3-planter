@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const SearchResult = (props) => {
   return (
     <div
@@ -19,12 +20,13 @@ const SearchResult = (props) => {
                 className="result-image"
                 src={
                   // render a placeholder image with a blur if there is no image from the api
-                  plant.default_image.thumbnail
+                  plant.default_image && plant.default_image.thumbnail
                     ? plant.default_image.thumbnail
                     : "https://i.imgur.com/MqCdOKp.png"
                 }
                 style={
-                  plant.default_image.thumbnail
+                  // default_image is sometimes null so it needs to be checked first
+                  plant.default_image && plant.default_image.thumbnail
                     ? {}
                     : {
                         filter: "blur(2px)",
