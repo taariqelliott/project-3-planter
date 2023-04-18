@@ -66,7 +66,7 @@ const PlantList = () => {
                   style={
                     plant.default_image.thumbnail
                       ? {}
-                      : { filter: "blur(2px)", filter: "brightness(50%)" }
+                      : { filter: "blur(2px)", filter: "brightness(70%)" }
                   }
                   alt={plant.common_name}
                 />
