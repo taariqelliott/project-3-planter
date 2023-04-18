@@ -381,20 +381,20 @@ text-align: right;
 margin-bottom: 20px;
 }
 
-.pagination .prev-btn, .show-page-btn, .collections-page-btn{
+.pagination .prev-btn, .show-page-btn, .collections-page-btn, .login-in-popup{
   border: 1px solid rgb(76, 151, 69);
   border-radius: 8px;
   margin-right: 5px;
   padding: 4px;
 }
 
-.pagination .next-btn, .show-page-btn, .collections-page-btn {
+.pagination .next-btn, .show-page-btn, .collections-page-btn, .login-in-popup {
   border: 1px solid rgb(76, 151, 69);
   border-radius: 8px;
   padding: 4px;
 }
 
-.pagination .prev-btn:hover, .pagination .next-btn:hover, .show-page-btn:hover, .collections-page-btn:hover{
+.pagination .prev-btn:hover, .pagination .next-btn:hover, .show-page-btn:hover, .collections-page-btn:hover, .login-in-popup:hover{
   background-color: #bdbaba;
 
 }
@@ -424,17 +424,12 @@ margin-bottom: 20px;
   list-style: none;
 }
 
-/* Footer section */
-
 
 /* collections */
 .collections-cont-ifempty{
   color: rgb(31, 134, 64);
   font-size: 100px;
 }
-
-
-
 
 /* //Footer section */
 
@@ -499,12 +494,12 @@ margin-bottom: 20px;
 }
 
 /* popup window when user is not legged in */
+
 .popup-window{
   display: flex;
-  height: 50dvh;
-  justify-content: center;
+  flex-direction: column;
+  height: 40dvh;
   font-size: 30px;
-  /* flex-flow: row wrap; */
 
 }
 
@@ -515,15 +510,9 @@ margin-bottom: 20px;
   background: transparent;
   color:rgb(76, 151, 69);
   font-size: 1.8rem;
-
-
-}
-.popup-header{
-  align-self: center;
-  margin-top: -150px;
-  padding: 50px;
-}
-.login-in-popup{
   align-self: flex-end;
+}
 
+.popup-header{
+  padding: 50px;
 }
