@@ -31,8 +31,8 @@ function PlantDetails({ plant }) {
           <em>{plant.scientific_name}</em>
         </h2>
 
-        {plant.description}
-
+        <a>{plant.description}</a>
+        <br />
         <p>
           <strong>Type:</strong> {plant.type}
         </p>

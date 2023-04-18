@@ -58,6 +58,10 @@
   display: flex;
 }
 
+.show-content p {
+  text-align: left;
+}
+
 @media (max-width: 1020px){
 
   .plant-details {
