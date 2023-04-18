@@ -26,7 +26,13 @@ function PlantDetails({ plant }) {
         />
       </div>
       <div className="show-content">
-        <h1>{plant.common_name}</h1>
+        <h1>
+          {plant.common_name
+            // capitalize each word
+            .split(" ")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ")}
+        </h1>
         <h2>
           <em>{plant.scientific_name}</em>
         </h2>
