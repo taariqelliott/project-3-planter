@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./UserProfile"
 
+
 const Navbar = (props) => {
   
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
