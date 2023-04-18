@@ -458,7 +458,11 @@ margin-bottom: 20px;
 /* popup window when user is not legged in */
 .popup-window{
   display: flex;
-  height: 40dvh;
+  height: 50dvh;
+  justify-content: center;
+  font-size: 30px;
+  /* flex-flow: row wrap; */
+
 }
 
 .close{
@@ -468,5 +472,15 @@ margin-bottom: 20px;
   background: transparent;
   color:rgb(76, 151, 69);
   font-size: 1.8rem;
-  margin-top: 20px
+
+
+}
+.popup-header{
+  align-self: center;
+  margin-top: -150px;
+  padding: 50px;
+}
+.login-in-popup{
+  align-self: flex-end;
+
 }
