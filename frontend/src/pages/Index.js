@@ -1,9 +1,7 @@
 import Blogs from "./Blogs";
 import PlantList from "../components/PlantList";
 import SearchResult from "../components/SearchResult";
-import Slider from "../components/Slider/Slider"
-
-
+import Slider from "../components/Slider/Slider";
 
 const Index = (props) => {
   // define a function that will return the JSX needed once we get the data
@@ -24,11 +22,10 @@ const Index = (props) => {
             </form>
           </div>
         </div>
-        
-        <SearchResult query={props.query} />
-        <PlantList plants={props.plants} URL={props.URL}/>
-        <Blogs blogs={props.blogs} />
 
+        <SearchResult query={props.query} />
+        <PlantList plants={props.plants} URL={props.URL} />
+        <Blogs blogs={props.blogs} />
       </div>
     );
   };

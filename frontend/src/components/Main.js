@@ -12,7 +12,6 @@ import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
 import Help from "../pages/Help";
 import Logout from "../pages/Logout";
-import Contact from "../pages/Contact";
 
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
@@ -30,7 +29,7 @@ const Main = (props) => {
     return initialValue || [];
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -120,7 +119,7 @@ const Main = (props) => {
 
   //Search Result page api and functions
 
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-3t2R642df04b75c19417&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-ynpn642f11225c738446&q=`;
 
   const [query, setQuery] = useState({
     slug: "", //the search term
@@ -217,7 +216,6 @@ const Main = (props) => {
         <Route exact path="/help" element={<Help />} />
         <Route exact path="/login" />
         <Route exact path="/logout" element={<Logout />} />
-        <Route exact path="/contact" element={<Contact />} />
       </Routes>
     </main>
   );
