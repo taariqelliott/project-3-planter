@@ -13,8 +13,6 @@ import Collections from "../pages/Collections";
 import Help from "../pages/Help";
 import Logout from "../pages/Logout";
 
-
-
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
@@ -25,17 +23,13 @@ const Main = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
 
-
   const [collection, setCollection] = useState(() => {
     const saved = localStorage.getItem("collection");
     const initialValue = JSON.parse(saved);
-    return initialValue || []
+    return initialValue || [];
   });
 
-
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-3t2R642df04b75c19417`;
-
-
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -82,7 +76,6 @@ const Main = (props) => {
     console.log(blogForm);
   };
 
-
   //Update Blogs
 
   const updateBlogs = async (blog, id) => {
@@ -124,12 +117,9 @@ const Main = (props) => {
     setPage(page + 1);
   };
 
-  
-
   //Search Result page api and functions
 
-
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-3t2R642df04b75c19417&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-ynpn642f11225c738446&q=`;
 
   const [query, setQuery] = useState({
     slug: "", //the search term
@@ -193,7 +183,14 @@ const Main = (props) => {
         <Route
           exact
           path="/show/:id"
-          element={<Show URL={ALL_PLANTS_API} detailsURL={detailsURL} collection={collection} setCollection={setCollection} />}
+          element={
+            <Show
+              URL={ALL_PLANTS_API}
+              detailsURL={detailsURL}
+              collection={collection}
+              setCollection={setCollection}
+            />
+          }
         />
         <Route exact path="/blogs" element={<Blogs blogs={blogs} />} />
         <Route
@@ -211,11 +208,14 @@ const Main = (props) => {
           path="/edit/:id"
           element={<EditPage blogs={blogs} updateBlogs={updateBlogs} />}
         />
-        <Route exact path="/mycollections" element={<Collections collection={collection} />} />
+        <Route
+          exact
+          path="/mycollections"
+          element={<Collections collection={collection} />}
+        />
         <Route exact path="/help" element={<Help />} />
         <Route exact path="/login" />
-        <Route exact path="/logout" element={<Logout/>}/>
-        
+        <Route exact path="/logout" element={<Logout />} />
       </Routes>
     </main>
   );

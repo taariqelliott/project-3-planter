@@ -10,18 +10,22 @@
 
 
 .show-img {
-  border: 5px solid rgb(19, 52, 18);
-  border-radius: 5px;
+  min-width: 300px;
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  border-style: inset;
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  box-shadow: 0 6px 12px rgb(31, 61, 29, 0.2);
 }
+
 .show-img {
   margin: 15px;
 }
 
-.show-content {
-  padding: 10px 20px;
-  line-height: 35px;
-  text-align: left;
-}
+
 
 .show-page-btn {
   width: 200px;
@@ -54,6 +58,16 @@
 .plant-details {
   display: flex;
 }
+
+.show-content {
+  padding: 20px;
+}
+
+.show-content p {
+  text-align: left;
+  padding-left: 12px;
+}
+
 
 @media (max-width: 1020px){
 

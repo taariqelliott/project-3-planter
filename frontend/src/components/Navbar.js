@@ -21,7 +21,8 @@ const Navbar = (props) => {
 
   return (
     <header className="item">
-      <div className="logo-div"><h3>Logo</h3></div>
+      <div className="logo-div"><a href="/"><img className="plantlogo" src="https://i.imgur.com/HqoLHeR.png" alt="" /></a></div>
+      <Profile/>
       <nav className="nav" ref={navRef}>
 
         <a href="/">Home</a>

@@ -5,6 +5,7 @@ const Footer = (props) => {
         <div className="footer-content">
           <h3>About us</h3>
           <p>
+            <br />
             This website is not for commercial use but a demo of it. Pictures
             and details are taken from internet to create a school project. As a
             plant lover, we four decided to create a demo of plant app, so that
@@ -16,12 +17,13 @@ const Footer = (props) => {
         </div>
         <div>
           <div className="footer-link">
-            <a href="/">Contact us</a>
+            <a href="/contact">Contact Us</a>
             <a href="/help">Diagnose Your Plant</a>
           </div>
           <div className="top-margin">
             <p className="footer-text">
-              Copyright &copy; Taariq, Alina, Sam, Rezwana <span id="year">{new Date().getFullYear()}</span>
+              Copyright &copy; Taariq, Alina, Sam, Rezwana{" "}
+              <span id="year">{new Date().getFullYear()}</span>
             </p>
             <div className="footer-text">
               For any inquiry <strong>email:</strong>{" "}
