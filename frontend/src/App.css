@@ -252,6 +252,7 @@ header {
   display: flex;
   align-items: center;
   font-size: 1rem;
+  transform: translateX(-15%);
 }
 
 .logo-div {
@@ -261,6 +262,11 @@ header {
   align-items: center;
 }
 
+.plantlogo{
+  
+  width: 200px;
+  
+}
 
 .align-left {
   text-align: left;
