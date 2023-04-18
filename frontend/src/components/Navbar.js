@@ -5,6 +5,7 @@ import Profile from "./UserProfile"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+
 const Navbar = (props) => {
   
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -22,17 +23,19 @@ const Navbar = (props) => {
   return (
     <header className="item">
       <div className="logo-div"><a href="/"><img className="plantlogo" src="https://i.imgur.com/HqoLHeR.png" alt="" /></a></div>
-      <Profile/>
+      <button className="nav-btn" onClick={showNavbar}>
+          <FaBars />
+      </button>
+      
       <nav className="nav" ref={navRef}>
 
-        <a href="/">Home</a>
         <a href="/plants">All Plants</a>
 
           {isAuthenticated ? (
             <>
         <a href="/new">Create Blog</a>
         <a href="/mycollections" >My Collection</a>
-            <a href="/logout" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
+        <a href="/logout" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</a>
           </>
           ):(
             <>
@@ -66,9 +69,7 @@ const Navbar = (props) => {
           <FaTimes />
         </button>
       </nav>
-      <button className="nav-btn" onClick={showNavbar}>
-          <FaBars />
-      </button>
+      
     </header>
   );
 };

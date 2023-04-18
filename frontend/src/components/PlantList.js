@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const PlantList = () => {
+const PlantList = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setPlants] = useState([]);
   // keep state from resetting when users change the page number

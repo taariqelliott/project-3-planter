@@ -267,7 +267,6 @@ header {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  transform: translateX(-15%);
 }
 
 .logo-div {
@@ -310,7 +309,7 @@ header .nav-btn{
   margin-top: 20px
 }
 
-@media only screen and (max-width: 915px){
+@media only screen and (max-width: 1100px){
   header .nav-btn {
     visibility: visible;
     opacity: 1;
