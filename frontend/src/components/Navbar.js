@@ -36,11 +36,13 @@ const Navbar = (props) => {
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
-      </nav>
 
-      <button className="nav-btn" onClick={showNavbar}>
+        <button className="nav-btn" onClick={showNavbar}>
           <FaBars />
       </button>
+      </nav>
+
+
     </header>
   );
 };
