@@ -58,6 +58,10 @@
   display: flex;
 }
 
+.show-content {
+  padding: 20px;
+}
+
 .show-content p {
   text-align: left;
 }
