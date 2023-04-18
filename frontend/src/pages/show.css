@@ -17,18 +17,14 @@
   border-width: 3px;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 10%;
-  box-shadow: 0 6px 12px rgb(31, 61, 29, 0.4);
+  box-shadow: 0 6px 12px rgb(31, 61, 29, 0.2);
 }
 
 .show-img {
   margin: 15px;
 }
 
-.show-content {
-  padding: 10px 20px;
-  line-height: 35px;
-  text-align: left;
-}
+
 
 .show-page-btn {
   width: 200px;
