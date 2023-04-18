@@ -297,7 +297,7 @@ nav a:hover {
   color: rgba(0, 0, 0, 0.30);
 }
 
-header .nav-btn {
+header .nav-btn{
   padding: 5px;
   cursor: pointer;
   background: transparent;
@@ -499,3 +499,32 @@ margin-bottom: 20px;
   color: rgb(0, 0, 0);
 }
 
+/* popup window when user is not legged in */
+.popup-window{
+  display: flex;
+  height: 50dvh;
+  justify-content: center;
+  font-size: 30px;
+  /* flex-flow: row wrap; */
+
+}
+
+.close{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color:rgb(76, 151, 69);
+  font-size: 1.8rem;
+
+
+}
+.popup-header{
+  align-self: center;
+  margin-top: -150px;
+  padding: 50px;
+}
+.login-in-popup{
+  align-self: flex-end;
+
+}

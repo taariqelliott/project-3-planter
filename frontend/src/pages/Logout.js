@@ -2,7 +2,7 @@ function Logout(props) {
 
     return (
       <div>
-        <h1>You've been succesfully logged out!</h1>
+          <img src={"https://planter123.s3.us-east-2.amazonaws.com/logout.jpg"} alt={""}/>
       </div>
     )
     

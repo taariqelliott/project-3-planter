@@ -9,7 +9,7 @@ const Profile = () => {
     isAuthenticated && (
       <div className="user-container">
         <img className="user-icon"src={user.picture} alt={user.name} />
-        <h6 className="user-name" >Welcome back, {user.name}!</h6>
+        <h6 className="user-name" >Welcome, {user.name}!</h6>
       </div>
     )
   );
