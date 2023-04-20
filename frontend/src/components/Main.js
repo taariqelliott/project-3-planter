@@ -13,6 +13,7 @@ import Collections from "../pages/Collections";
 import Help from "../pages/Help";
 import Logout from "../pages/Logout";
 
+
 const Main = (props) => {
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
