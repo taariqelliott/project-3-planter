@@ -15,10 +15,13 @@ const New = (props) => {
     date: Date
   });
 
+
+
   // handleChange function for form
   const handleChange = (event) => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
+
 
   // handleSubmit function for form
   const handleSubmit = (event) => {
@@ -111,10 +114,9 @@ const New = (props) => {
             </label>
             <input className="form-input"
               id="image"
-              type="file"
+              type="text"
               value={newForm.image}
               name="image"
-              accept="uploads/*"
               placeholder="image"
               onChange={handleChange}
             />
@@ -154,8 +156,10 @@ const New = (props) => {
             </div>
 
           </form>
-        
+         
       </div>
+      <div></div>
+      
     </section>
   );
 };

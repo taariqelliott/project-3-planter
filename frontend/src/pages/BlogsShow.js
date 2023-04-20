@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import Comments from "../components/comments/Comments";
 import { Link } from "react-router-dom";
 
 const BlogShow = (props) => {
@@ -42,6 +43,7 @@ const BlogShow = (props) => {
         <button className="btn-lg" id="delete" onClick={removeBlog}>
           DELETE
         </button>
+        <div className="flex-comments-box"><Comments currentUserId="1" curr/></div>
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 /* //form settings */
 
-/* section {
+section {
   display: flex;
-  justify-content: center;
-} */
+  justify-content: space-around;
+}
+
 .form-div {
   background-color: rgb(189, 216, 154);
   border-radius: 5px;
