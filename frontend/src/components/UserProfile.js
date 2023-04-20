@@ -11,7 +11,7 @@ const Profile = (props) => {
       <div className="user-container">
         <img className="user-icon"src={user.picture} alt={user.name} />
     
-{console.log(user.name)}
+        {console.log(user.name)}
         <h6 className="user-name" >Welcome, {user.name}!</h6>
       </div>
     )
