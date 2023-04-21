@@ -4,7 +4,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./Slider-data";
 import "./Slider.css";
 
-const Slider = () => {
+const Slider = (props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideLength = sliderData.length;
 
@@ -39,8 +39,10 @@ const Slider = () => {
 
   // handle button clicks
   const handleClick = (btnUrl) => {
-    if (btnUrl === "indoorToggle" || btnUrl === "outdoorToggle") {
-      alert("toggle clicked for " + btnUrl);
+    if (btnUrl === "indoorToggle") {
+      props.setIndoor(true);
+    } else if (btnUrl === "outdoorToggle") {
+      props.setIndoor(false);
     } else {
       window.location.href = btnUrl;
     }
