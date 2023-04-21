@@ -8,7 +8,9 @@ const PlantList = (props) => {
 
   const loadPlants = async () => {
     const response = await fetch(
-      `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472${
+
+      `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421${
+        // if indoor is truthy, append "&indoor=1" to the end, else do nothing
         props.indoor ? "&indoor=1" : ""
       }`
     );
@@ -29,8 +31,10 @@ const PlantList = (props) => {
   return (
     <div className="plant-box card">
       <div className="toggle-container">
-        <button onClick={handleToggleIndoor}>
+
+        <button  className="btn-lg" onClick={handleToggleIndoor}>
           {props.indoor ? "Viewing Indoor Plants" : "Viewing Outdoor Plants"}
+
         </button>
       </div>
 

@@ -2,13 +2,14 @@
 
 section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .form-div {
   background-color: rgb(189, 216, 154);
   border-radius: 5px;
   padding: 10px 40px;
+  width: 400px;
 }
 
 .form-div {
