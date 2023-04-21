@@ -1,6 +1,3 @@
-
- import "./Comments.css";
-
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
@@ -10,36 +7,50 @@ import {
   updateComment as updateCommentApi,
   deleteComment as deleteCommentApi,
 } from "../../api";
+import './Comments.css'
 
 const Comments = ({ commentsUrl, currentUserId }) => {
-  
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
-  
+
+
+  // const URL = "https://plantdatabase.herokuapp.com/comments/";
+  // const getComments = async () => {
+  //   // make api call and get response
+  //   const response = await fetch(URL);
+  //   // turn response into javascript object
+  //   const data = await response.json();
+  //   console.log("line 23" + data);
+  //   setBackendComments(data);
+  // };
+
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.parentId === null
   );
 
+
   const getReplies = (commentId) =>
     backendComments
-      .filter((backendComment) => backendComment.parentId === commentId)
+      .filter((backendComment) => backendComment.parentId === commentId) //array of replies
       .sort(
         (a, b) =>
-          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime() //sort replies ascending
       );
 
-  const addComment = (text, parentId) => {
-    createCommentApi(text, parentId).then((comment) => {
+//create comment
+  const addComment = (text, username, parentId) => {
+    createCommentApi(text, username, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
     });
   };
 
-  const updateComment = (text, commentId) => {
-    updateCommentApi(text).then(() => {
+  //Update comment
+  const updateComment = (text, username, commentId) => {
+    updateCommentApi(text, username).then(() => {
       const updatedBackendComments = backendComments.map((backendComment) => {
         if (backendComment.id === commentId) {
-          return { ...backendComment, body: text };
+          return { ...backendComment, body: text, username: username };
         }
         return backendComment;
       });
@@ -57,6 +68,8 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       });
     }
   };
+
+
 
   useEffect(() => {
     getCommentsApi().then((data) => {

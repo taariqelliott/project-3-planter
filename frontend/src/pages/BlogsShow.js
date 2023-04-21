@@ -43,7 +43,7 @@ const BlogShow = (props) => {
         <button className="btn-lg" id="delete" onClick={removeBlog}>
           DELETE
         </button>
-        <div className="flex-comments-box"><Comments currentUserId="1" curr/></div>
+        <div className="flex-comments-box"><Comments currentUserId="1" /></div>
       </div>
     </div>
   );
