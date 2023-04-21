@@ -5,25 +5,24 @@ const PlantList = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setPlants] = useState([]);
   // keep state from resetting when users change the page number
-  const [indoor, setIndoor] = useState(false);
 
   const loadPlants = async () => {
     const response = await fetch(
-      `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446${
-        // if indoor is truthy, append "&indoor=1" to the end, else do nothing
-        indoor ? "&indoor=1" : ""
+      `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472${
+        props.indoor ? "&indoor=1" : ""
       }`
     );
+
     const data = await response.json();
     setPlants(data.data);
   };
 
   useEffect(() => {
     loadPlants();
-  }, [page, indoor]);
+  }, [page, props.indoor]);
 
   const handleToggleIndoor = () => {
-    setIndoor(!indoor);
+    props.setIndoor(!props.indoor);
     setPage(1);
   };
 
@@ -31,7 +30,7 @@ const PlantList = (props) => {
     <div className="plant-box card">
       <div className="toggle-container">
         <button onClick={handleToggleIndoor}>
-          {indoor ? "Viewing Indoor Plants" : "Viewing Outdoor Plants"}
+          {props.indoor ? "Viewing Indoor Plants" : "Viewing Outdoor Plants"}
         </button>
       </div>
 
