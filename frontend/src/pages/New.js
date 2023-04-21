@@ -6,6 +6,7 @@ import './Form.css'
 const New = (props) => {
 
   const navigate = useNavigate()
+  
   const [newForm, setNewForm] = useState({
     title: "",
     name: "",
