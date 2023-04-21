@@ -31,7 +31,7 @@ const Main = (props) => {
     return initialValue || [];
   });
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
 
   // Function to get list of Plants
   const getAllPlants = async () => {
@@ -121,7 +121,7 @@ const Main = (props) => {
 
   //Search Result page api and functions
 
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-ynpn642f11225c738446&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-pdyK642b684e0b8c3421&q=`;
 
   const [query, setQuery] = useState({
     slug: "", //the search term
