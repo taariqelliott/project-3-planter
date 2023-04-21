@@ -5,13 +5,12 @@ const PlantList = (props) => {
   const [page, setPage] = useState(1);
   const [plants, setPlants] = useState([]);
   // keep state from resetting when users change the page number
-  const [indoor, setIndoor] = useState(false);
 
   const loadPlants = async () => {
     const response = await fetch(
       `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472${
-        indoor ? "&indoor=1" : ""
-      }${props.indoor ? "&indoor=1" : ""}${props.indoor ? "" : "&indoor=0"}`
+        props.indoor ? "&indoor=1" : ""
+      }`
     );
 
     const data = await response.json();
@@ -20,10 +19,10 @@ const PlantList = (props) => {
 
   useEffect(() => {
     loadPlants();
-  }, [page, indoor, props.indoor]);
+  }, [page, props.indoor]);
 
   const handleToggleIndoor = () => {
-    setIndoor(!indoor);
+    props.setIndoor(!props.indoor);
     setPage(1);
   };
 
