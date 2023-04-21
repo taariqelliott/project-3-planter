@@ -29,7 +29,7 @@ const BlogShow = (props) => {
   return (
     <div className="show-container">
       <div className="image-box">
-        <img className="show-img" src={blog.image} alt={blog.title} />
+        <img className="show-img" src={blog.image} alt={blog.name} />
       </div>
       <div className="show-content">
         <h1>{blog.title}</h1>
@@ -38,12 +38,12 @@ const BlogShow = (props) => {
         <p>{blog.description}</p>
         <p>Date of creation: {formatDate(blog.date)}</p>
         <Link to={`/edit/${blog._id}`} key={blog._id}>
-          <button className="btn-lg">EDIT BLOG</button>
+          <button className="btn-lg">Edit Blog</button>
         </Link>
         <button className="btn-lg" id="delete" onClick={removeBlog}>
           DELETE
         </button>
-        <div className="flex-comments-box"><Comments currentUserId="1" /></div>
+        <div className="flex-comments-box"><Comments currentUserId="1"/></div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Home from "../pages/Home";
 import BlogsShow from "../pages/BlogsShow";
-import Blogs from "../pages/Blogs";
+import Blogs from "./Blogs";
 import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
@@ -20,7 +20,7 @@ const Main = (props) => {
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
 
-  const [blogs, setblog] = useState(null);
+  const [blogs, setblog] = useState([]);
 
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
