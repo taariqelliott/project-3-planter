@@ -41,8 +41,9 @@ a {
 
   .container main {
     grid-column: 1 / span 12;
+    z-index: 0;
   }
-  
+
   main .homeParent {
     grid-column: 1 / span 12;
   }
@@ -67,7 +68,7 @@ a {
 
 
   .main-container .header-box {
-    grid-column: 6 / span 12;
+    grid-column: 4 / span 12;
   }
 
   .main-container section {
@@ -173,8 +174,7 @@ a {
 input[type="search" i] {
   padding: 5px 20px;
   border: 1px solid rgb(76, 151, 69);
-
-  max-width: 425px;
+  width: 450px;
 }
 
 .submit-btn {
@@ -251,6 +251,7 @@ header {
   padding: 0 2rem;
   background-color: rgb(76, 151, 69);
   color: white;
+  z-index: 50;
 }
 
 .nav {
@@ -337,10 +338,10 @@ header .nav-btn {
 
 /* end of nav setup */
 
-.form-div {
+/* .form-div {
   padding: 20px;
   text-align: center;
-}
+} */
 
 input[type="text" i] {
   margin: 5px 2px;
@@ -371,9 +372,11 @@ input[type="submit" i] {
 .collections-page-btn,
 .login-in-popup {
   border: 1px solid rgb(76, 151, 69);
+  background-color: rgb(19, 52, 18);
   border-radius: 8px;
   margin-right: 5px;
   padding: 4px;
+  color: #ffffff;
 }
 
 .pagination .next-btn,
@@ -381,8 +384,10 @@ input[type="submit" i] {
 .collections-page-btn,
 .login-in-popup {
   border: 1px solid rgb(76, 151, 69);
+  background-color: rgb(19, 52, 18);
   border-radius: 8px;
   padding: 4px;
+   color: #ffffff;
 }
 
 .pagination .prev-btn:hover,
@@ -390,10 +395,11 @@ input[type="submit" i] {
 .show-page-btn:hover,
 .collections-page-btn:hover,
 .login-in-popup:hover {
-  background-color: #bdbaba;
+  background-color: rgb(111, 205, 107);
+  color: #000000;
 }
 
-.toggle-container button {
+/* .toggle-container button {
   border: 1px solid rgb(76, 151, 69);
   border-radius: 8px;
   padding: 4px 16px 4px 16px;
@@ -401,7 +407,7 @@ input[type="submit" i] {
 
 .toggle-container button:hover {
   background-color: #bdbaba;
-}
+} */
 
 .search-bar input {
   border: 1px solid #4c9745;
@@ -577,4 +583,23 @@ input[type="submit" i] {
   border-radius: 15px;
   text-align: center;
 }
+
+/* buttons */
+
+.btn-lg, .header-btn {
+  background-color: rgb(19, 52, 18);
+  color: #ffffff;
+  margin-right: 2%;
+  outline: none;
+  border: 1px solid yellow;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn-lg:hover, .header-btn:hover {
+  background-color: rgb(111, 205, 107);
+  color: #000000;
+}
+
 

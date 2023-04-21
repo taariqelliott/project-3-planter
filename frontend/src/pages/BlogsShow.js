@@ -38,7 +38,7 @@ const BlogShow = (props) => {
         <p>{blog.description}</p>
         <p>Date of creation: {formatDate(blog.date)}</p>
         <Link to={`/edit/${blog._id}`} key={blog._id}>
-          <button className="btn-lg">Edit Blog</button>
+          <button className="btn-lg">EDIT BLOG</button>
         </Link>
         <button className="btn-lg" id="delete" onClick={removeBlog}>
           DELETE

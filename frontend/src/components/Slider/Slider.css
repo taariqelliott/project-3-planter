@@ -16,6 +16,7 @@
   opacity: 0;
   transform: translateX(-100%);
   transition: all 0.5s ease;
+
 }
 
 @media screen and (min-width: 600px) {
@@ -43,11 +44,13 @@
   width: 50%;
   /* color: #fff; */
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   animation: slide-up 1s ease 0.5s;
   /* // animation-delay: 1s; */
   animation-fill-mode: forwards;
   visibility: hidden;
+  color:rgb(189, 216, 154);
+  font-weight: 400px;
 }
 
 @keyframes slide-up {
@@ -110,7 +113,7 @@ hr {
   width: 50%;
 }
 
-.header-btn {
+/* .header-btn {
   color: #000000;
   background-color: aliceblue;
   outline: none;
@@ -124,4 +127,4 @@ hr {
 .header-btn:hover {
   color: #ffffff;
   background-color: rgb(98, 236, 114);
-}
+} */
