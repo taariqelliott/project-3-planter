@@ -42,6 +42,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
     createCommentApi(text, username, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
+      //addd to local
     });
   };
 
