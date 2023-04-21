@@ -15,14 +15,10 @@ const Comment = ({
     activeComment &&
     activeComment.id === comment.id &&
     activeComment.type === "editing";
-
-
   const isReplying =
     activeComment &&
     activeComment.id === comment.id &&
     activeComment.type === "replying";
-
-    
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
   const canDelete =
@@ -31,9 +27,6 @@ const Comment = ({
   const canEdit = currentUserId === comment.userId && !timePassed;
   const replyId = parentId ? parentId : comment.id;
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
-
-
-
   return (
     <div key={comment.id} className="comment">
       <div className="comment-image-container">
@@ -50,7 +43,7 @@ const Comment = ({
             submitLabel="Update"
             hasCancelButton
             initialText={comment.body}
-            handleSubmit={(text) => updateComment(text, comment.id)}
+            handleSubmit={(text, username) => updateComment(text, username, comment.id)}
             handleCancel={() => {
               setActiveComment(null);
             }}
@@ -89,7 +82,7 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel="Reply"
-            handleSubmit={(text) => addComment(text, replyId)}
+            handleSubmit={(text, username) => addComment(text, username, replyId)}
           />
         )}
         {replies.length > 0 && (
