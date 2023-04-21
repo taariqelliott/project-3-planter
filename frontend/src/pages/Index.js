@@ -2,13 +2,17 @@ import Blogs from "./Blogs";
 import PlantList from "../components/PlantList";
 import SearchResult from "../components/SearchResult";
 import Slider from "../components/Slider/Slider";
+import { useState } from "react";
 
 const Index = (props) => {
+  const [indoor, setIndoor] = useState(false);
+
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
     return (
       <div className="main-container">
-        <Slider />
+        <Slider indoor={indoor} setIndoor={setIndoor} />
+
         <div className="header-box">
           <div className="search-bar">
             <form onSubmit={props.handleSubmit}>
@@ -24,7 +28,12 @@ const Index = (props) => {
         </div>
 
         <SearchResult query={props.query} />
-        <PlantList plants={props.plants} URL={props.URL} />
+        <PlantList
+          plants={props.plants}
+          URL={props.URL}
+          indoor={indoor}
+          setIndoor={setIndoor}
+        />
         <Blogs blogs={props.blogs} />
       </div>
     );
