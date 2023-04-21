@@ -1,4 +1,5 @@
 import CommentForm from "./CommentForm";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Comment = ({
   comment,
@@ -11,6 +12,8 @@ const Comment = ({
   parentId = null,
   currentUserId,
 }) => {
+  const { user } = useAuth0();
+  
   const isEditing =
     activeComment &&
     activeComment.id === comment.id &&
@@ -34,7 +37,7 @@ const Comment = ({
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
-          <div className="comment-author">{comment.username}</div>
+          <div className="comment-author">{comment.username || user.name}</div>
           <div>{createdAt}</div>
         </div>
         {!isEditing && <div className="comment-text">{comment.body}</div>}

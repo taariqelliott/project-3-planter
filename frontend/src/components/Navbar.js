@@ -48,12 +48,12 @@ const Navbar = (props) => {
               }modal nested>
                 {close => (
                           <div className='popup-window'>
-                            <h4 className="popup-header">Please login to proceed to the page</h4>
+                            <button className="close" tabindex="0" onClick=
+                              {() => close()}>
+                                <FaTimes />
+                            </button>
+                              <h4 className="popup-header">Please login to proceed to the page</h4>
                                 <div>
-                                  <button className="close" tabindex="0" onClick=
-                                    {() => close()}>
-                                  <FaTimes />
-                                  </button>
                                    <button className="login-in-popup" onClick={() => loginWithRedirect()}>Log in</button>
                                  </div>
                           </div>
