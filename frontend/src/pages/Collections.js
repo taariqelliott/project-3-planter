@@ -49,7 +49,13 @@ function Collections({ collection }) {
                 </button>
               </div>
             )}
-            <h3>{plant.common_name}</h3>
+            <h3>
+              {plant.common_name
+                // capitalize each word
+                .split(" ")
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(" ")}
+            </h3>
             <Link to={`/show/${plant.id}`} key={plant.id}>
               <img
                 className="plant-image"
