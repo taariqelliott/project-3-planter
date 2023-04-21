@@ -56,6 +56,9 @@ function Collections({ collection }) {
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(" ")}
             </h3>
+            <p>
+              <em>{plant.scientific_name}</em>
+            </p>
             <Link to={`/show/${plant.id}`} key={plant.id}>
               <img
                 className="plant-image"
