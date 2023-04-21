@@ -2,11 +2,9 @@ function Home(props) {
   return (
     <div className="homeParent">
       <div className="videoWrapper">
-        <iframe
-          src="https://www.youtube.com/embed/CV2P-xsEiYE?autoplay=1&mute=1&loop=1&playlist=CV2P-xsEiYE"
-          frameborder="0"
-          allowFullScreen={true}
-        ></iframe>
+      <video id="background-video" autoPlay loop muted video="https://planter123.s3.us-east-2.amazonaws.com/flowers1.mp4">
+        <source src="https://planter123.s3.us-east-2.amazonaws.com/flowers1.mp4" type="video/mp4"/>
+        </video>
       </div>
       <div className="homeChild">
         <h1>plant(ER)</h1>
