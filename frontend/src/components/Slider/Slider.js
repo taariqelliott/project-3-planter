@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"; remove Link and use window.location instead
 import { sliderData } from "./Slider-data";
 import "./Slider.css";
 
@@ -37,6 +37,15 @@ const Slider = () => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
 
+  // handle button clicks
+  const handleClick = (btnUrl) => {
+    if (btnUrl === "indoorToggle" || btnUrl === "outdoorToggle") {
+      alert("toggle clicked for " + btnUrl);
+    } else {
+      window.location.href = btnUrl;
+    }
+  };
+
   return (
     <div className="slider">
       <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide} />
@@ -53,10 +62,12 @@ const Slider = () => {
                 <div className="content">
                   <h2>{slide.heading}</h2>
                   <hr />
-                  <button className="header-btn">
-                  <Link to={slide.btnUrl}>
-                  {slide.btnTitle}
-                   </Link></button>
+                  <button
+                    className="header-btn"
+                    onClick={() => handleClick(slide.btnUrl)}
+                  >
+                    {slide.btnTitle}
+                  </button>
                 </div>
               </div>
             )}
