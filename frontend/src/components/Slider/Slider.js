@@ -37,12 +37,28 @@ const Slider = (props) => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
 
+  // function to send user screen to PlantList
+  const snapTo = () => {
+    // get position of PlantList.js component
+    const plantListPosition = document
+      .getElementsByClassName("toggle-container")[0]
+      .getBoundingClientRect().top;
+    // snap to position of PlantList.js
+    window.scrollTo({
+      top: window.pageYOffset + plantListPosition,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   // handle button clicks
   const handleClick = (btnUrl) => {
     if (btnUrl === "indoorToggle") {
       props.setIndoor(true);
+      snapTo();
     } else if (btnUrl === "outdoorToggle") {
       props.setIndoor(false);
+      snapTo();
     } else {
       window.location.href = btnUrl;
     }
