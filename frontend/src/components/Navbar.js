@@ -42,7 +42,7 @@ const Navbar = (props) => {
               <Popup trigger={
                 <div >
                   <a href="/#" onClick={handleLinkClick}>Create Blog</a>
-                  <a href="/#">My Collection</a>
+                  <a href="/#" onClick={handleLinkClick}>My Collection</a>
                 </div>
 
               }modal nested>

@@ -20,7 +20,7 @@ const Main = (props) => {
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
 
-  const [blogs, setblog] = useState(null);
+  const [blogs, setblog] = useState([]);
 
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
@@ -64,6 +64,7 @@ const Main = (props) => {
     // set the about state to the data
     setblog(data.data);
   };
+
 
   //Function to create Blogs
 
