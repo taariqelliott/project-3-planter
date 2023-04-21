@@ -19,7 +19,7 @@ a {
 /* GRID SETTING */
 
 .container {
-  display: grid;
+  /* display: grid; */
   /* height: 100vh; */
   grid-template-rows: auto 1fr auto;
   gap: 15px;
@@ -550,6 +550,7 @@ input[type="submit" i] {
 }
 
 .back-video {
+  background: #000000;
   position: absolute;
   right: 0;
   bottom: 0;
