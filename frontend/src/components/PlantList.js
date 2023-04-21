@@ -9,7 +9,7 @@ const PlantList = (props) => {
 
   const loadPlants = async () => {
     const response = await fetch(
-      `https://perenual.com/api/species-list?page=${page}&key=sk-ynpn642f11225c738446${
+      `https://perenual.com/api/species-list?page=${page}&key=sk-9K4o6433387bc1b25472${
         indoor ? "&indoor=1" : ""
       }${props.indoor ? "&indoor=1" : ""}${props.indoor ? "" : "&indoor=0"}`
     );
