@@ -11,9 +11,7 @@ const PlantList = (props) => {
 
       `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421${
         // if indoor is truthy, append "&indoor=1" to the end, else do nothing
-        indoor ? "&indoor=1" : ""
-
-
+        props.indoor ? "&indoor=1" : ""
       }`
     );
 
