@@ -52,6 +52,8 @@
   font-weight: 400px;
 }
 
+
+
 @keyframes slide-up {
   0% {
     visibility: visible;
@@ -63,11 +65,6 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .content {
-    width: 80%;
-  }
-}
 
 
 
@@ -127,3 +124,16 @@ hr {
   color: #ffffff;
   background-color: rgb(98, 236, 114);
 } */
+
+
+@media screen and (max-width: 600px) {
+  .content {
+    width: 40%;
+    left: 3rem;
+  }
+
+  .arrow {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
