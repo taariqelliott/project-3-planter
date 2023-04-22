@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 import Home from "../pages/Home";
-import BlogsShow from "../pages/BlogsShow";
-import Blogs from "../pages/Blogs";
+import BlogsShow from "./BlogsShow";
+import Blogs from "./Blogs";
 import NewPage from "../pages/New";
 import EditPage from "../pages/Edit";
 import Collections from "../pages/Collections";
@@ -22,11 +22,10 @@ const Main = (props) => {
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
 
-  const [blogs, setblog] = useState([]);
 
+  const [blogs, setblog] = useState([]);
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
-
   const [collection, setCollection] = useState(() => {
     const saved = localStorage.getItem("collection");
     const initialValue = JSON.parse(saved);
@@ -34,7 +33,6 @@ const Main = (props) => {
   });
 
 
-  // const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
   const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=${API_KEY}`;
 
 
@@ -103,7 +101,6 @@ const Main = (props) => {
   };
 
   //Delete Blog
-
   const deleteBlog = async (id) => {
     await fetch(URL2 + id, {
       method: "DELETE",
@@ -112,6 +109,7 @@ const Main = (props) => {
     getblogs();
   };
 
+  //USE EFFCT for blogs
   useEffect(() => {
     getblogs();
   }, []);
@@ -202,7 +200,7 @@ const Main = (props) => {
             />
           }
         />
-        <Route exact path="/blogs" element={<Blogs blogs={blogs} />} />
+        <Route exact path="/blogs" element={<Blogs blogs={blogs} deleteBlog={deleteBlog} updateBlogs={updateBlogs}/>} />
         <Route
           exact
           path="/blogs/:id"

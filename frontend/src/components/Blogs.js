@@ -6,8 +6,7 @@ function Blogs(props) {
       <div className="blog-box card">
         <h2>Read Our Recent Articles</h2>
         {
-          
-          props.blogs.map((blog) => (
+            props.blogs.map((blog) => (
             <div key={blog._id} className="blogContainer">
               <ul>
               <Link to={`/blogs/${blog._id}`}>

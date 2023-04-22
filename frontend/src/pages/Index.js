@@ -1,4 +1,4 @@
-import Blogs from "./Blogs";
+import Blogs from "../components/Blogs";
 import PlantList from "../components/PlantList";
 import SearchResult from "../components/SearchResult";
 import Slider from "../components/Slider/Slider";
@@ -34,7 +34,7 @@ const Index = (props) => {
           indoor={indoor}
           setIndoor={setIndoor}
         />
-        <Blogs blogs={props.blogs} />
+        <Blogs blogs={props.blogs} blog={props.blog}/>
       </div>
     );
   };

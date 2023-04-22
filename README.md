@@ -6,9 +6,12 @@
 ![Screenshot 2023-04-21 at 5 08 21 PM](https://user-images.githubusercontent.com/116773111/233751241-c43d872a-dd3b-44d7-8f04-550767cf1051.png)
 ![Screenshot 2023-04-21 at 5 12 01 PM](https://user-images.githubusercontent.com/116773111/233751244-96c74f6b-b0d2-4ab7-b176-059d5de1c5dc.png)
 
-
 ## Description
 Plant(ER) is a web app designed to help plant owners take care of their plants. Also this app is a great knowledge base to learn more about different plant species.
+
+## Wireframes:
+![Screenshot 2023-04-21 at 10 45 38 PM](https://user-images.githubusercontent.com/116773111/233765319-638fc542-6c47-4cd9-97de-6ebddc821fc3.png)
+
 
 ## Table of Contents
 * [Technologies Used](#technologiesused)
@@ -30,9 +33,11 @@ Plant(ER) is a web app designed to help plant owners take care of their plants. 
 
 
 ## Features
-* Users can run full C.R.U.D. operation on 1 model
+* Users can run full C.R.U.D. operation on a blog model
 * App pulls live plant information from 3rd party API
-
+* Ability to add plants to collections
+* Ability to comment blogs, and see other users' comments
+* Quiz to determine plant's diseases
 
 ## Trello Planning
 * Link to Trello: https://trello.com/b/sQSjgmc6/project-3
@@ -48,7 +53,9 @@ Plant(ER) is a web app designed to help plant owners take care of their plants. 
 * Users will be able to login to view special events
 
 ## <a name="deployment"></a>Deployed Link
-* tbd
+* backend: https://plantdatabase.herokuapp.com/
+* frontend: https://plant-er.herokuapp.com/
+
 
 * You can view the repository:
 [Github.com](https://github.com/taariqelliott/project-3-planter)
