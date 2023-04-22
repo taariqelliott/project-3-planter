@@ -7,9 +7,11 @@ const PlantList = (props) => {
   // keep state from resetting when users change the page number
 
   const loadPlants = async () => {
+    const API_KEY = process.env.REACT_APP_API_KEY
+
     const response = await fetch(
 
-      `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421${
+      `https://perenual.com/api/species-list?page=${page}&key=${API_KEY}${
         // if indoor is truthy, append "&indoor=1" to the end, else do nothing
         props.indoor ? "&indoor=1" : ""
       }`

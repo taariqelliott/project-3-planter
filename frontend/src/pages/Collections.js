@@ -14,7 +14,6 @@ function Collections({ collection }) {
   console.log(collection);
   return (
     <div>
-      <h1>Collections Page</h1>
       {localStorage.getItem("collection") &&
       JSON.parse(localStorage.getItem("collection")).length !== 0 ? (
         <button
@@ -26,7 +25,7 @@ function Collections({ collection }) {
       ) : (
         <div className="collections-cont-ifempty">
           <br></br>
-          <h2>No plants in your collection quite yet...</h2>
+          <h6>No plants in your collection quite yet...</h6>
           <img
             src={"https://planter123.s3.us-east-2.amazonaws.com/plant.jpg"}
             alt={""}

@@ -8,7 +8,11 @@ const BlogShow = (props) => {
   const id = params.id;
   const blogs = props.blogs;
   const blog = blogs.find((b) => b._id === id);
-
+  
+if(!blog){
+  return <h1>Loading ...</h1>
+}
+  
   const removeBlog = (e) => {
     e.preventDefault();
     props.deleteBlog(blog._id);
