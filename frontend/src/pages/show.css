@@ -55,7 +55,8 @@
 }
 
 .plant-details {
-  display: flex;
+  /* display: flex; */
+  padding: 20px;
 }
 
 .show-content {
@@ -83,4 +84,10 @@
       margin-right: 0;
     }
 
+  }
+
+  .show-page-div-button{
+    display: flex;
+    max-width: 30%;
+    justify-content: center;
   }

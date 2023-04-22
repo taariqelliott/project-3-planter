@@ -19,8 +19,8 @@ a {
 /* GRID SETTING */
 
 .container {
-  /* display: grid; */
-  /* height: 100vh; */
+  display: grid; 
+  height: 100vh;
   grid-template-rows: auto 1fr auto;
   gap: 15px;
 }
