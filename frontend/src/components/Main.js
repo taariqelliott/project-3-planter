@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 //Import pages
 import Index from "../pages/Index";
 import Show from "../pages/Show";
@@ -14,13 +15,14 @@ import Help from "../pages/Help";
 import Logout from "../pages/Logout";
 import Contact from "../pages/Contact";
 
-
 const Main = (props) => {
+  const API_KEY = process.env.REACT_APP_API_KEY
+
   const URL = "https://plantdatabase.herokuapp.com/";
   const URL2 = "https://plantdatabase.herokuapp.com/blogs/";
   const detailsURL = "https://perenual.com/api/species/details/";
 
-  const [blogs, setblog] = useState(null);
+  const [blogs, setblog] = useState([]);
 
   const [page, setPage] = useState(1);
   const [plants, setplants] = useState(null);
@@ -32,7 +34,8 @@ const Main = (props) => {
   });
 
 
-  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
+  // const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=sk-pdyK642b684e0b8c3421`;
+  const ALL_PLANTS_API = `https://perenual.com/api/species-list?page=${page}&key=${API_KEY}`;
 
 
   // Function to get list of Plants
@@ -64,6 +67,7 @@ const Main = (props) => {
     // set the about state to the data
     setblog(data.data);
   };
+
 
   //Function to create Blogs
 
@@ -124,7 +128,7 @@ const Main = (props) => {
   //Search Result page api and functions
 
 
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-pdyK642b684e0b8c3421&q=`;
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=${API_KEY}&q=`;
 
 
   const [query, setQuery] = useState({

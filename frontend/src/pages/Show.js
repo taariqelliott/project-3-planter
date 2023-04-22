@@ -9,11 +9,11 @@ function Show({ collection, setCollection, detailsURL }) {
   const [addButtonVisible, setAddButtonVisible] = useState(true);
   const { isAuthenticated } = useAuth0();
 
-  const apiKey = "sk-9K4o6433387bc1b25472";
+  const API_KEY = process.env.REACT_APP_API_KEY
   // const apiKey2 = "sk-ynpn642f11225c738446";
 
   const getDetails = async () => {
-    const details = `${detailsURL}${id}?key=${apiKey}`;
+    const details = `${detailsURL}${id}?key=${API_KEY}`;
 
     const response = await fetch(details);
     const data = await response.json();
