@@ -53,7 +53,7 @@ function Show({ collection, setCollection, detailsURL }) {
         <>
           <PlantDetails plant={plant} />
           {addButtonVisible && isAuthenticated && (
-            <div>
+            <div className="show-page-div-button">
               <button className="show-page-btn" onClick={addToCollection}>
                 Add to my collection
               </button>

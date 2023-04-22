@@ -25,7 +25,7 @@ function Collections({ collection }) {
       ) : (
         <div className="collections-cont-ifempty">
           <br></br>
-          <h5>No plants in your collection quite yet...</h5>
+          <h6>No plants in your collection quite yet...</h6>
           <img
             src={"https://planter123.s3.us-east-2.amazonaws.com/plant.jpg"}
             alt={""}
