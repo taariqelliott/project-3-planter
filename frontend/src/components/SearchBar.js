@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SearchBar = (props) => {
-  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=sk-9K4o6433387bc1b25472&q=`;
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const API_PLANTS = `https://perenual.com/api/species-list?page=1&key=${API_KEY}&q=`;
   const [query, setQuery] = useState({
     slug: "", //the search term
     results: [], // Api's response
