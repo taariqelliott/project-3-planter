@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import Comments from "../components/comments/Comments";
+import Comments from "./comments/Comments";
 import { Link } from "react-router-dom";
 
 const BlogShow = (props) => {

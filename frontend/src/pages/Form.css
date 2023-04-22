@@ -92,3 +92,16 @@ textarea.form-input {
 .form-btn:focus, .form-btn:hover {
   background: #0fa942 ;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  .form-div {
+    width: 100%;
+  }
+
+  .btn-row {
+    margin-left: 0px;
+   }
+
+}
